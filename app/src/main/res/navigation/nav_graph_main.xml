@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/indiaHomeFragment">
+
+    <fragment
+        android:id="@+id/indiaHomeFragment"
+        android:name="com.example.covinfo.fragments.IndiaHomeFragment"
+        android:label="fragment_india_home"
+        tools:layout="@layout/fragment_india_home" >
+        <action
+            android:id="@+id/action_indiaHomeFragment_to_newsListFragment"
+            app:destination="@id/newsListFragment" />
+        <action
+            android:id="@+id/action_indiaHomeFragment_to_indiaInfoFragment"
+            app:destination="@id/indiaInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="com.example.covinfo.fragments.NewsListFragment"
+        android:label="fragment_news_list"
+        tools:layout="@layout/fragment_news_list" >
+        <action
+            android:id="@+id/action_newsListFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.covinfo.fragments.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/indiaInfoFragment"
+        android:name="com.example.covinfo.fragments.IndiaInfoFragment"
+        android:label="fragment_india_info"
+        tools:layout="@layout/fragment_india_info" >
+        <action
+            android:id="@+id/action_indiaInfoFragment_to_stateInfoFragment"
+            app:destination="@id/stateInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stateInfoFragment"
+        android:name="com.example.covinfo.fragments.StateInfoFragment"
+        android:label="fragment_state_info"
+        tools:layout="@layout/fragment_state_info" >
+        <action
+            android:id="@+id/action_stateInfoFragment_to_districtInfoFragment"
+            app:destination="@id/districtInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/districtInfoFragment"
+        android:name="com.example.covinfo.fragments.DistrictInfoFragment"
+        android:label="fragment_district_info"
+        tools:layout="@layout/fragment_district_info" />
+</navigation>
