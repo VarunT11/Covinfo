@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="24dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvSortSheetTitle"
+            style="@style/FragmentHeadingStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Filter Data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSortTitle"
+            style="@style/SortSheetSectionTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Sort By"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSortSheetTitle" />
+
+        <RadioGroup
+            android:id="@+id/rgSort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSortTitle">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbName"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbActive"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Active Cases" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbConfirmed"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmed Cases" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbRecovered"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recovered Cases" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbDeceased"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deceased Cases" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvOrderTitle"
+            style="@style/SortSheetSectionTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Order Data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgSort" />
+
+        <RadioGroup
+            android:id="@+id/rgOrder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderTitle">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbIncreasing"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Increasing" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/mrbDecreasing"
+                style="@style/SortSheetItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Decreasing" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

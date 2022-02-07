@@ -16,6 +16,11 @@
         <action
             android:id="@+id/action_indiaHomeFragment_to_indiaInfoFragment"
             app:destination="@id/indiaInfoFragment" />
+        <action
+            android:id="@+id/action_indiaHomeFragment_to_worldHomeFragment"
+            app:destination="@id/worldHomeFragment"
+            app:popUpTo="@id/indiaHomeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/newsListFragment"
@@ -54,4 +59,47 @@
         android:name="com.example.covinfo.fragments.DistrictInfoFragment"
         android:label="fragment_district_info"
         tools:layout="@layout/fragment_district_info" />
+    <fragment
+        android:id="@+id/worldHomeFragment"
+        android:name="com.example.covinfo.fragments.WorldHomeFragment"
+        android:label="fragment_world_home"
+        tools:layout="@layout/fragment_world_home" >
+        <action
+            android:id="@+id/action_worldHomeFragment_to_worldInfoFragment"
+            app:destination="@id/worldInfoFragment" />
+        <action
+            android:id="@+id/action_worldHomeFragment_to_newsListFragment"
+            app:destination="@id/newsListFragment" />
+        <action
+            android:id="@+id/action_worldHomeFragment_to_indiaHomeFragment"
+            app:destination="@id/indiaHomeFragment"
+            app:popUpTo="@id/worldHomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/worldInfoFragment"
+        android:name="com.example.covinfo.fragments.WorldInfoFragment"
+        android:label="fragment_world_info"
+        tools:layout="@layout/fragment_world_info" >
+        <action
+            android:id="@+id/action_worldInfoFragment_to_regionInfoFragment"
+            app:destination="@id/regionInfoFragment" />
+        <action
+            android:id="@+id/action_worldInfoFragment_to_countryInfoFragment"
+            app:destination="@id/countryInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regionInfoFragment"
+        android:name="com.example.covinfo.fragments.RegionInfoFragment"
+        android:label="fragment_region_info"
+        tools:layout="@layout/fragment_region_info" >
+        <action
+            android:id="@+id/action_regionInfoFragment_to_countryInfoFragment"
+            app:destination="@id/countryInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryInfoFragment"
+        android:name="com.example.covinfo.fragments.CountryInfoFragment"
+        android:label="fragment_country_info"
+        tools:layout="@layout/fragment_country_info" />
 </navigation>

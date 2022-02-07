@@ -2,14 +2,18 @@ package com.example.covinfo.api;
 
 import android.content.Context;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.covinfo.interfaces.FetchApiInterface;
 
 import java.util.HashMap;
 
 public class ApiSingleton {
+
+    public interface FetchApiInterface {
+        void onApiFetchComplete(boolean success, String result);
+    }
 
     private Context context;
 
@@ -33,6 +37,11 @@ public class ApiSingleton {
                 url,
                 response -> fetchApiInterface.onApiFetchComplete(true, response),
                 error -> fetchApiInterface.onApiFetchComplete(false, error.getLocalizedMessage())
+        );
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                10000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
         );
         Volley.newRequestQueue(context).add(stringRequest);
     }

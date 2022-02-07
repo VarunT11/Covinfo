@@ -19,5 +19,7 @@
 
     <color name="color_grey">#6D757D</color>
     <color name="color_grey_card">#106D757D</color>
+    
+    <color name="color_graph_line">#2005065C</color>
 
 </resources>

@@ -7,7 +7,7 @@
     tools:context=".fragments.IndiaHomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutIndiaHomeInfo"
+        android:id="@+id/layoutWorldHomeInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvInfoHeading"
+            android:id="@+id/tvWorldInfoHeading"
             style="@style/SectionHeadingTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -24,78 +24,59 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
             android:text="Covid Updates"
-            app:layout_constraintEnd_toStartOf="@+id/btnViewIndiaInfo"
+            app:layout_constraintEnd_toStartOf="@+id/btnViewWorldInfo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnViewIndiaInfo"
+            android:id="@+id/btnViewWorldInfo"
             style="@style/TextButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:text="Detailed View"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvInfoHeading"
+            app:layout_constraintStart_toEndOf="@+id/tvWorldInfoHeading"
             app:layout_constraintTop_toTopOf="parent" />
 
         <include
-            android:id="@+id/caseCardIndiaHomeConfirmed"
+            android:id="@+id/caseCardWorldHomeConfirmed"
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/caseCardIndiaHomeActive"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnViewIndiaInfo" />
-
-        <include
-            android:id="@+id/caseCardIndiaHomeActive"
-            layout="@layout/case_card_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/caseCardIndiaHomeConfirmed"
-            app:layout_constraintTop_toBottomOf="@+id/btnViewIndiaInfo" />
-
-        <include
-            android:id="@+id/caseCardIndiaHomeRecovered"
-            layout="@layout/case_card_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/caseCardIndiaHomeDeceased"
+            app:layout_constraintEnd_toStartOf="@+id/caseCardWorldHomeDeceased"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/caseCardIndiaHomeConfirmed" />
+            app:layout_constraintTop_toBottomOf="@+id/btnViewWorldInfo" />
 
         <include
-            android:id="@+id/caseCardIndiaHomeDeceased"
+            android:id="@+id/caseCardWorldHomeDeceased"
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/caseCardIndiaHomeRecovered"
+            app:layout_constraintBottom_toBottomOf="@+id/caseCardWorldHomeConfirmed"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/caseCardIndiaHomeRecovered"
-            app:layout_constraintTop_toTopOf="@+id/caseCardIndiaHomeRecovered" />
+            app:layout_constraintStart_toEndOf="@+id/caseCardWorldHomeConfirmed"
+            app:layout_constraintTop_toTopOf="@+id/caseCardWorldHomeConfirmed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutIndiaHomeNews"
+        android:id="@+id/layoutWorldHomeNews"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutIndiaHomeInfo">
+        app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeInfo">
 
 
         <TextView
-            android:id="@+id/tvNewsHeading"
+            android:id="@+id/tvWorldNewsHeading"
             style="@style/SectionHeadingTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -103,12 +84,12 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
             android:text="Latest Headlines"
-            app:layout_constraintEnd_toStartOf="@+id/btnViewAllNews"
+            app:layout_constraintEnd_toStartOf="@+id/btnViewAllWorldNews"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnViewAllNews"
+            android:id="@+id/btnViewAllWorldNews"
             style="@style/TextButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -118,7 +99,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvIndiaHomeNews"
+            android:id="@+id/rcvWorldHomeNews"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -127,28 +108,29 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnViewAllNews" />
+            app:layout_constraintTop_toBottomOf="@+id/btnViewAllWorldNews" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include
-        android:id="@+id/layoutIndiaHomeDoctorSuggestion"
+        android:id="@+id/layoutWorldHomeDoctorSuggestion"
         layout="@layout/doctor_suggestion_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutIndiaHomeNews"/>
+        app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeNews"/>
 
     <include
-        android:id="@+id/layoutIndiaHomeMeetDevelopers"
+        android:id="@+id/layoutWorldHomeMeetDevelopers"
         layout="@layout/meet_developer_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutIndiaHomeDoctorSuggestion">
+        app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeDoctorSuggestion">
 
     </include>
 

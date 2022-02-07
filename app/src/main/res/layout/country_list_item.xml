@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mcvCountryListItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/color_primary_light"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp"
+    app:contentPadding="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCountryListItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvCountryListName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textColor="@color/color_text"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvCountryListTotalConfirmed"
+            app:layout_constraintHorizontal_weight="1.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCountryListTotalConfirmed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="TextView"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/color_red"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvCountryListDailyConfirmed"
+            app:layout_constraintEnd_toStartOf="@+id/tvCountryListTotalDeceased"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tvCountryListName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCountryListTotalDeceased"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="TextView"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/color_grey"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvCountryListDailyDeceased"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tvCountryListTotalConfirmed"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCountryListDailyConfirmed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="TextView"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/color_red"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvCountryListTotalConfirmed"
+            app:layout_constraintStart_toStartOf="@+id/tvCountryListTotalConfirmed"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryListTotalConfirmed" />
+
+        <TextView
+            android:id="@+id/tvCountryListDailyDeceased"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="TextView"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/color_grey"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvCountryListTotalDeceased"
+            app:layout_constraintStart_toStartOf="@+id/tvCountryListTotalDeceased"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryListTotalDeceased" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

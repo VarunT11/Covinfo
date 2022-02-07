@@ -13,13 +13,10 @@ import androidx.navigation.Navigation;
 
 import com.example.covinfo.R;
 import com.example.covinfo.api.ActivityApiManager;
-import com.example.covinfo.classes.DistrictStats;
-import com.example.covinfo.classes.IndiaStats;
+import com.example.covinfo.classes.CovidStats;
 import com.example.covinfo.classes.News;
-import com.example.covinfo.classes.StateStats;
-import com.example.covinfo.enums.TimeSeriesType;
+import com.example.covinfo.enums.TaskType;
 import com.example.covinfo.interfaces.ActivityFragmentInterface;
-import com.example.covinfo.interfaces.ApiManagerInterface;
 import com.example.covinfo.viewmodels.MainViewModel;
 
 import java.util.ArrayList;
@@ -30,8 +27,27 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentI
 
     private MainViewModel mainViewModel;
     private NavController navController;
-
     private ActivityApiManager apiManager;
+
+    private ActivityApiManager.ApiManagerInterface apiManagerInterface = new ActivityApiManager.ApiManagerInterface() {
+        @Override
+        public void onNewsFetchComplete(TaskType taskType, boolean success, ArrayList<News> newsList, String error) {
+            if (success) {
+                mainViewModel.setNewsList(newsList);
+            } else {
+                showErrorMessage(taskType + " " + error);
+            }
+        }
+
+        @Override
+        public void onStatsDataFetchComplete(TaskType taskType, boolean success, ArrayList<CovidStats> covidStatsData, String error) {
+            if (success) {
+                updateViewModelFromTaskResult(taskType, covidStatsData);
+            } else {
+                showErrorMessage(taskType + " " + error);
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,135 +68,110 @@ public class MainActivity extends AppCompatActivity implements ActivityFragmentI
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         navController = Navigation.findNavController(this, R.id.navHostMain);
 
-        apiManager = new ActivityApiManager(this, apiManagerInterface);
+        apiManager = ActivityApiManager.initializeApiManager(this, apiManagerInterface);
 
         navController.addOnDestinationChangedListener((navController, navDestination, bundle) -> {
             if (navDestination.getId() == R.id.indiaHomeFragment) {
-
                 tvMainHeading.setText("Covinfo");
 
-                apiManager.getOverallStatsIndia();
-                apiManager.getNewsHeadlinesIndia();
-
+                apiManager.addApiTask(TaskType.INDIA_DATA, null, null, null, null);
+                apiManager.addApiTask(TaskType.INDIA_NEWS, null, null, null, null);
             } else if (navDestination.getId() == R.id.newsListFragment) {
-
                 tvMainHeading.setText("News");
-
             } else if (navDestination.getId() == R.id.indiaInfoFragment) {
-
                 tvMainHeading.setText("Covid Updates");
 
-                apiManager.getTimeSeriesDataIndia(TimeSeriesType.MONTH);
-                apiManager.getStatesDataList();
-
+                apiManager.addApiTask(TaskType.INDIA_DATA_TIME_SERIES, null, null, null, null);
+                apiManager.addApiTask(TaskType.STATE_DATA_LIST, null, null, null, null);
             } else if (navDestination.getId() == R.id.stateInfoFragment) {
-
                 tvMainHeading.setText("Covid Updates");
 
                 String stateCode = mainViewModel.getCurrentStateCode().getValue();
 
-                apiManager.getStateTimeSeriesData(TimeSeriesType.MONTH, stateCode);
-                apiManager.getDistrictsDataList(stateCode);
-
+                apiManager.addApiTask(TaskType.STATE_DATA, null, null, stateCode, null);
+                apiManager.addApiTask(TaskType.STATE_DATA_TIME_SERIES, null, null, stateCode, null);
+                apiManager.addApiTask(TaskType.DISTRICT_DATA_LIST, null, null, stateCode, null);
             } else if (navDestination.getId() == R.id.districtInfoFragment) {
-
                 tvMainHeading.setText("Covid Updates");
 
                 String stateCode = mainViewModel.getCurrentStateCode().getValue();
                 String districtName = mainViewModel.getCurrentDistrictName().getValue();
 
-                apiManager.getDistrictData(stateCode, districtName);
-                apiManager.getDistrictTimeSeriesData(TimeSeriesType.MONTH, stateCode, districtName);
+                apiManager.addApiTask(TaskType.DISTRICT_DATA, null, null, stateCode, districtName);
+                apiManager.addApiTask(TaskType.DISTRICT_DATA_TIME_SERIES, null, null, stateCode, districtName);
+            } else if (navDestination.getId() == R.id.worldHomeFragment){
+                apiManager.addApiTask(TaskType.GLOBAL_DATA, null, null, null, null);
+                apiManager.addApiTask(TaskType.WORLD_NEWS, null, null, null, null);
+            } else if (navDestination.getId() == R.id.worldInfoFragment){
+                apiManager.addApiTask(TaskType.REGION_DATA_LIST, null, null, null, null);
+            } else if (navDestination.getId() == R.id.regionInfoFragment){
+                String regionCode = mainViewModel.getCurrentWhoRegionCode().getValue();
 
+                apiManager.addApiTask(TaskType.REGION_DATA, regionCode, null, null, null);
+                apiManager.addApiTask(TaskType.REGION_COUNTRY_DATA_LIST, regionCode, null, null, null);
+            } else if (navDestination.getId() == R.id.countryInfoFragment){
+                String countryCode = mainViewModel.getCurrentCountryCode().getValue();
+
+                apiManager.addApiTask(TaskType.COUNTRY_DATA, null, countryCode, null, null);
+                apiManager.addApiTask(TaskType.COUNTRY_DATA_TIME_SERIES, null, countryCode, null, null);
             }
         });
     }
 
     private void showErrorMessage(String error) {
-        Toast.makeText(this, "Error in Loading Data", Toast.LENGTH_SHORT).show();
-        Log.d("API Data Fetch Error", error);
+        if (error != null) {
+            Toast.makeText(this, "Error in Loading Data", Toast.LENGTH_SHORT).show();
+            Log.d("API Data Fetch Error", error);
+        }
     }
 
-    private final ApiManagerInterface apiManagerInterface = new ApiManagerInterface() {
-        @Override
-        public void onNewsFetchComplete(boolean success, ArrayList<News> newsList, String error) {
-            if (success) {
-                mainViewModel.setNewsList(newsList);
-            } else {
-                showErrorMessage(error);
-            }
+    private void updateViewModelFromTaskResult(TaskType taskType, ArrayList<CovidStats> statsData) {
+        switch (taskType) {
+            case GLOBAL_DATA:
+                mainViewModel.setGlobalOverallStats(statsData.get(0));
+                break;
+            case REGION_DATA_LIST:
+                mainViewModel.setWhoRegionDataList(statsData);
+                break;
+            case REGION_DATA:
+                mainViewModel.setCurrentWhoRegionStats(statsData.get(0));
+                break;
+            case REGION_COUNTRY_DATA_LIST:
+                mainViewModel.setWhoRegionCountryDataList(statsData);
+                break;
+            case COUNTRY_DATA_LIST:
+                mainViewModel.setCountryDataList(statsData);
+                break;
+            case COUNTRY_DATA:
+                mainViewModel.setCurrentCountryStats(statsData.get(0));
+                break;
+            case COUNTRY_DATA_TIME_SERIES:
+                mainViewModel.setCountryTimeSeriesData(statsData);
+                break;
+            case INDIA_DATA:
+                mainViewModel.setIndiaOverallStats(statsData.get(0));
+                break;
+            case INDIA_DATA_TIME_SERIES:
+                mainViewModel.setIndiaTimeSeriesData(statsData);
+                break;
+            case STATE_DATA_LIST:
+                mainViewModel.setStateDataList(statsData);
+                break;
+            case STATE_DATA:
+                mainViewModel.setCurrentStateStats(statsData.get(0));
+                break;
+            case STATE_DATA_TIME_SERIES:
+                mainViewModel.setCurrentStateTimeSeriesData(statsData);
+                break;
+            case DISTRICT_DATA_LIST:
+                mainViewModel.setDistrictDataList(statsData);
+                break;
+            case DISTRICT_DATA:
+                mainViewModel.setCurrentDistrictStats(statsData.get(0));
+                break;
+            case DISTRICT_DATA_TIME_SERIES:
+                mainViewModel.setCurrentDistrictTimeSeriesData(statsData);
+                break;
         }
-
-        @Override
-        public void onIndiaStatsFetch(boolean success, IndiaStats indiaStats, String error) {
-            if (success) {
-                mainViewModel.setIndiaOverallStats(indiaStats);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onIndiaTimeSeriesStatsFetch(boolean success, ArrayList<IndiaStats> indiaTimeSeriesStats, String error) {
-            if (success) {
-                mainViewModel.setIndiaTimeSeriesData(indiaTimeSeriesStats);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onStatesDataListFetch(boolean success, ArrayList<StateStats> stateStatsList, String error) {
-            if (success) {
-                mainViewModel.setStateListData(stateStatsList);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onStateDataFetch(boolean success, StateStats stateStats, String error) {
-            if (success) {
-                mainViewModel.setCurrentStateStats(stateStats);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onStateTimeSeriesDataFetch(boolean success, ArrayList<StateStats> stateTimeSeriesStats, String error) {
-            if (success) {
-                mainViewModel.setCurrentStateTimeSeriesData(stateTimeSeriesStats);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onDistrictsListFetch(boolean success, ArrayList<DistrictStats> districtsDataList, String error) {
-            if (success) {
-                mainViewModel.setDistrictListData(districtsDataList);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onDistrictDataFetch(boolean success, DistrictStats districtStats, String error) {
-            if (success) {
-                mainViewModel.setCurrentDistrictStats(districtStats);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-
-        @Override
-        public void onDistrictTimeSeriesDataFetch(boolean success, ArrayList<DistrictStats> districtTimeSeriesStats, String error) {
-            if (success) {
-                mainViewModel.setCurrentDistrictTimeSeriesData(districtTimeSeriesStats);
-            } else {
-                showErrorMessage(error);
-            }
-        }
-    };
+    }
 }

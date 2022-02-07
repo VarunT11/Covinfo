@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutIndiaInfoList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvStatsListTitle"
+        style="@style/FragmentHeadingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="Title"
+        app:layout_constraintBottom_toTopOf="@+id/btnDataSort"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvSearchBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/color_primary"
+        app:cardCornerRadius="4dp"
+        app:contentPadding="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDataSort"
+        app:layout_constraintEnd_toStartOf="@+id/btnDataSort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDataSort">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:id="@+id/etSearchName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/input_background"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Search"
+                android:inputType="textPersonName"
+                android:paddingStart="12dp"
+                android:textColor="@color/color_text"
+                android:textColorHint="#30000000"
+                android:textCursorDrawable="@color/color_text"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnNameSearch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/btnNameSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etSearchName"
+                app:layout_constraintTop_toTopOf="@+id/etSearchName"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageButton
+        android:id="@+id/btnDataSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_sort"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatsListName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/mcvSearchBar"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatsListTitle"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvStatsListName"
+        style="@style/IndiaItemNameHeadingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="3dp"
+        android:paddingStart="4dp"
+        android:text="Name Heading"
+        app:layout_constraintBottom_toTopOf="@+id/rcvStatsList"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatsListActive"
+        app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDataSort" />
+
+    <TextView
+        android:id="@+id/tvStatsListActive"
+        style="@style/IndiaItemCaseHeadingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Active"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStatsListName"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatsListConfirmed"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvStatsListName"
+        app:layout_constraintTop_toTopOf="@+id/tvStatsListName"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvStatsListConfirmed"
+        style="@style/IndiaItemCaseHeadingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Confirmed"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStatsListActive"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatsListRecovered"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvStatsListActive"
+        app:layout_constraintTop_toTopOf="@+id/tvStatsListActive"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvStatsListRecovered"
+        style="@style/IndiaItemCaseHeadingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Recovered"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStatsListConfirmed"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatsListDeceased"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvStatsListConfirmed"
+        app:layout_constraintTop_toTopOf="@+id/tvStatsListConfirmed"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvStatsListDeceased"
+        style="@style/IndiaItemCaseHeadingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Deceased"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStatsListRecovered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tvStatsListRecovered"
+        app:layout_constraintTop_toTopOf="@+id/tvStatsListRecovered"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvStatsList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatsListName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
