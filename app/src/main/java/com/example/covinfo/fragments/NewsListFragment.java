@@ -59,7 +59,10 @@ public class NewsListFragment extends Fragment implements ActivityFragmentInterf
         navController = Navigation.findNavController(requireView());
 
         mainViewModel.getNewsList().observe(getViewLifecycleOwner(), newsArrayList -> {
-            NewsListAdapter newsListAdapter = new NewsListAdapter(newsArrayList);
+            NewsListAdapter newsListAdapter = new NewsListAdapter(newsArrayList, position -> {
+                mainViewModel.setCurrentNews(position);
+                navController.navigate(R.id.action_newsListFragment_to_newsFragment);
+            });
             rcvNewsList.setAdapter(newsListAdapter);
         });
     }

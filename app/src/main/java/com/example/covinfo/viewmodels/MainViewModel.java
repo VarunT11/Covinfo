@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.covinfo.classes.CovidStats;
 import com.example.covinfo.classes.News;
+import com.example.covinfo.enums.RegionType;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,8 @@ public class MainViewModel extends ViewModel {
 
     private final MutableLiveData<ArrayList<News>> newsList;
     private final MutableLiveData<News> currentNews;
+
+    private final MutableLiveData<RegionType> currentRegionType;
 
     private final MutableLiveData<String>
             currentWhoRegionCode,
@@ -45,6 +48,8 @@ public class MainViewModel extends ViewModel {
     public MainViewModel() {
         newsList = new MutableLiveData<>();
         currentNews = new MutableLiveData<>();
+
+        currentRegionType = new MutableLiveData<>();
 
         currentWhoRegionCode = new MutableLiveData<>();
         currentWhoRegionName = new MutableLiveData<>();
@@ -80,12 +85,26 @@ public class MainViewModel extends ViewModel {
         return newsList;
     }
 
+    public void setCurrentNews(int position){
+        ArrayList<News> list = newsList.getValue();
+        if(list!=null && list.size()>position)
+            setCurrentNews(newsList.getValue().get(position));
+    }
+
     public void setCurrentNews(News news) {
         currentNews.setValue(news);
     }
 
     public LiveData<News> getCurrentNews() {
         return currentNews;
+    }
+
+    public void setCurrentRegionType(RegionType regionType) {
+        currentRegionType.setValue(regionType);
+    }
+
+    public LiveData<RegionType> getCurrentRegionType() {
+        return currentRegionType;
     }
 
     public void setCurrentWhoRegionCode(String regionCode) {

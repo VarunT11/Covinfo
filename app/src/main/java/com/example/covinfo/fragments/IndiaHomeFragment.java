@@ -70,9 +70,7 @@ public class IndiaHomeFragment extends Fragment implements ActivityFragmentInter
         btnViewDoctorAdvice.setOnClickListener(v -> startActivity(new Intent(requireActivity(), CovidAdviceActivity.class)));
 
         btnMeetDevelopers = view.findViewById(R.id.layoutIndiaHomeMeetDevelopers).findViewById(R.id.btnMeetDevelopers);
-        btnMeetDevelopers.setOnClickListener(v -> {
-            navController.navigate(R.id.action_indiaHomeFragment_to_worldHomeFragment);
-        });
+        btnMeetDevelopers.setOnClickListener(v -> navController.navigate(R.id.action_indiaHomeFragment_to_meetDeveloperFragment));
 
         rcvNewsList = view.findViewById(R.id.rcvIndiaHomeNews);
 
@@ -91,7 +89,10 @@ public class IndiaHomeFragment extends Fragment implements ActivityFragmentInter
             for (int i = 0; i < newsArrayList.size() && i < 2; i++) {
                 newsList.add(newsArrayList.get(i));
             }
-            NewsListAdapter newsListAdapter = new NewsListAdapter(newsList);
+            NewsListAdapter newsListAdapter = new NewsListAdapter(newsList, position -> {
+                mainViewModel.setCurrentNews(position);
+                navController.navigate(R.id.action_indiaHomeFragment_to_newsFragment);
+            });
             rcvNewsList.setAdapter(newsListAdapter);
         });
 

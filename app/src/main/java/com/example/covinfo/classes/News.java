@@ -13,10 +13,10 @@ public class News {
     private String description;
     private String newsUrl;
     private String newsImageUrl;
-    private long publishedTime;
+    private String publishedTime;
     private String content;
 
-    public News(String sourceName, String authors, String title, String description, String newsUrl, String newsImageUrl, long publishedTime, String content) {
+    public News(String sourceName, String authors, String title, String description, String newsUrl, String newsImageUrl, String publishedTime, String content) {
         this.sourceName = sourceName;
         this.authors = authors;
         this.title = title;
@@ -37,15 +37,7 @@ public class News {
                 newsUrl = jsonObject.getString("news_url");
                 newsImageUrl = jsonObject.getString("news_image_url");
                 content = jsonObject.getString("content");
-
-                String publishedTimeString = jsonObject.getString("published_time");
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    Instant instant = Instant.parse(publishedTimeString);
-                    publishedTime = instant.toEpochMilli();
-                } else {
-
-                }
-
+                publishedTime = jsonObject.getString("published_time");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -56,63 +48,31 @@ public class News {
         return sourceName;
     }
 
-    public void setSourceName(String sourceName) {
-        this.sourceName = sourceName;
-    }
-
     public String getAuthors() {
         return authors;
-    }
-
-    public void setAuthors(String authors) {
-        this.authors = authors;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getNewsUrl() {
         return newsUrl;
     }
 
-    public void setNewsUrl(String newsUrl) {
-        this.newsUrl = newsUrl;
-    }
-
     public String getNewsImageUrl() {
         return newsImageUrl;
     }
 
-    public void setNewsImageUrl(String newsImageUrl) {
-        this.newsImageUrl = newsImageUrl;
-    }
-
-    public long getPublishedTime() {
+    public String getPublishedTime() {
         return publishedTime;
-    }
-
-    public void setPublishedTime(long publishedTime) {
-        this.publishedTime = publishedTime;
     }
 
     public String getContent() {
         return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }

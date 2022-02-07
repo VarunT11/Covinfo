@@ -69,9 +69,7 @@ public class WorldHomeFragment extends Fragment implements ActivityFragmentInter
         btnViewDoctorAdvice.setOnClickListener(v -> startActivity(new Intent(requireActivity(), CovidAdviceActivity.class)));
 
         btnMeetDevelopers = view.findViewById(R.id.layoutWorldHomeMeetDevelopers).findViewById(R.id.btnMeetDevelopers);
-        btnMeetDevelopers.setOnClickListener(v -> {
-            navController.navigate(R.id.action_worldHomeFragment_to_indiaHomeFragment);
-        });
+        btnMeetDevelopers.setOnClickListener(v -> navController.navigate(R.id.action_worldHomeFragment_to_meetDeveloperFragment));
 
         rcvNewsList = view.findViewById(R.id.rcvWorldHomeNews);
 
@@ -90,7 +88,10 @@ public class WorldHomeFragment extends Fragment implements ActivityFragmentInter
             for (int i = 0; i < newsArrayList.size() && i < 2; i++) {
                 newsList.add(newsArrayList.get(i));
             }
-            NewsListAdapter newsListAdapter = new NewsListAdapter(newsList);
+            NewsListAdapter newsListAdapter = new NewsListAdapter(newsList, position -> {
+                mainViewModel.setCurrentNews(position);
+                navController.navigate(R.id.action_worldHomeFragment_to_newsFragment);
+            });
             rcvNewsList.setAdapter(newsListAdapter);
         });
 

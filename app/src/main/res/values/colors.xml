@@ -10,16 +10,20 @@
 
     <color name="color_red">#FC1441</color>
     <color name="color_red_card">#10FC1441</color>
+    <color name="color_red_graph_bg">#FFE7EC</color>
 
     <color name="color_blue">#157FFB</color>
     <color name="color_blue_card">#10157FFB</color>
+    <color name="color_blue_graph_bg">#E2EFFF</color>
 
     <color name="color_green">#30A64A</color>
     <color name="color_green_card">#1030A64A</color>
+    <color name="color_green_graph_bg">#E4f4E9</color>
 
     <color name="color_grey">#6D757D</color>
     <color name="color_grey_card">#106D757D</color>
+    <color name="color_grey_graph_bg">#EDEEF0</color>
     
-    <color name="color_graph_line">#2005065C</color>
+    <color name="color_graph_line">#3005065C</color>
 
 </resources>

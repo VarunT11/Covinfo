@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import com.example.covinfo.R;
 import com.example.covinfo.classes.CovidStats;
@@ -156,9 +157,9 @@ public class GraphView {
         yAxisLeft.setDrawAxisLine(false);
         yAxisLeft.setGridLineWidth(1F);
         yAxisLeft.setLabelCount(11);
-        yAxisLeft.setGridColor(Color.parseColor("#3005065C"));
+        yAxisLeft.setGridColor(activity.getColor(R.color.color_graph_line));
         yAxisLeft.setTextSize(8f);
-        yAxisLeft.setTextColor(Color.parseColor("#3005065C"));
+        yAxisLeft.setTextColor(activity.getColor(R.color.color_graph_line));
         yAxisLeft.setTypeface(Typeface.create("poppins_semibold", Typeface.BOLD));
 
         lineChart.getDescription().setEnabled(false);
@@ -231,44 +232,44 @@ public class GraphView {
         lineDataSet.setLineWidth(2.4F);
         lineDataSet.setDrawValues(false);
 
-        String textColorString = "#000000";
-        String backgroundColorString = "#000000";
+        int textColor=Color.BLACK;
+        int bgColor=Color.WHITE;
 
         switch (currentCaseType) {
             case TOTAL_CONFIRMED:
             case DAILY_CONFIRMED: {
-                textColorString = "#FC1441";
-                backgroundColorString = "#FFE7EC";
+                textColor = activity.getColor(R.color.color_red);
+                bgColor = activity.getColor(R.color.color_red_graph_bg);
                 break;
             }
             case TOTAL_RECOVERED:
             case DAILY_RECOVERED: {
-                textColorString = "#30A64A";
-                backgroundColorString = "#e4f4e9";
+                textColor = activity.getColor(R.color.color_green);
+                bgColor = activity.getColor(R.color.color_green_graph_bg);
                 break;
             }
             case TOTAL_DECEASED:
             case DAILY_DECEASED: {
-                textColorString = "#6D757D";
-                backgroundColorString = "#edeef0";
+                textColor = activity.getColor(R.color.color_grey);
+                bgColor = activity.getColor(R.color.color_grey_graph_bg);
                 break;
             }
             case TOTAL_ACTIVE:
             case DAILY_ACTIVE:{
-                lineDataSet.setColor(Color.parseColor("#157FFB"));
-                textColorString = "#157FFB";
-                backgroundColorString = "#e2efff";
+                textColor = activity.getColor(R.color.color_blue);
+                bgColor = activity.getColor(R.color.color_blue_graph_bg);
                 break;
             }
         }
 
-        lineDataSet.setColor(Color.parseColor(textColorString));
-        acTvMenuCasesType.setTextColor(Color.parseColor(textColorString));
-        tilMenuCasesType.setEndIconTintList(ColorStateList.valueOf(Color.parseColor(textColorString)));
-        mcvGraph.setCardBackgroundColor(Color.parseColor(backgroundColorString));
+        lineDataSet.setColor(textColor);
+        acTvMenuCasesType.setTextColor(textColor);
+        tilMenuCasesType.setEndIconTintList(ColorStateList.valueOf(textColor));
+        mcvGraph.setCardBackgroundColor(bgColor);
 
         LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
         lineChart.invalidate();
     }
+
 }

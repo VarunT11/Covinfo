@@ -21,6 +21,12 @@
             app:destination="@id/worldHomeFragment"
             app:popUpTo="@id/indiaHomeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_indiaHomeFragment_to_meetDeveloperFragment"
+            app:destination="@id/meetDeveloperFragment" />
+        <action
+            android:id="@+id/action_indiaHomeFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsListFragment"
@@ -75,6 +81,12 @@
             app:destination="@id/indiaHomeFragment"
             app:popUpTo="@id/worldHomeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_worldHomeFragment_to_meetDeveloperFragment"
+            app:destination="@id/meetDeveloperFragment" />
+        <action
+            android:id="@+id/action_worldHomeFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
     </fragment>
     <fragment
         android:id="@+id/worldInfoFragment"
@@ -102,4 +114,9 @@
         android:name="com.example.covinfo.fragments.CountryInfoFragment"
         android:label="fragment_country_info"
         tools:layout="@layout/fragment_country_info" />
+    <fragment
+        android:id="@+id/meetDeveloperFragment"
+        android:name="com.example.covinfo.fragments.MeetDeveloperFragment"
+        android:label="fragment_meet_developer"
+        tools:layout="@layout/fragment_meet_developer" />
 </navigation>

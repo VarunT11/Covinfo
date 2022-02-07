@@ -1,6 +1,30 @@
 <resources>
     <string name="app_name">CovInfo</string>
     <string name="backend_url">https://vt-covidapp.herokuapp.com/</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="advice_title">
+        <item>Get Vaccinated</item>
+        <item>Take Care Of Elderly People</item>
+        <item>Proper Treatment</item>
+        <item>Meditation Is The Key</item>
+        <item>Stay Inside</item>
+        <item>Consult doctors</item>
+        <item>Maintain Social Distance</item>
+        <item>Eat Healthy Food</item>
+        <item> Stay Hydrated</item>
+        <item>Get Tested</item>
+    </string-array>
+
+    <string-array name="advice_message">
+        <item>Vaccination is an important step to stop the pandemic.</item>
+        <item>Keeps checking up on elderly people time to time.</item>
+        <item>Self quarantine yourself if you started showing symptoms of COVID-19.</item>
+        <item>Helps in calmness and physical relaxation, and enhance overall health.</item>
+        <item>Without any reason, recommend to don’t go outside.</item>
+        <item>Doctors advices are always helpful, please consult doctor before using some home remedies of treatment.</item>
+        <item>Encourage others to maintain social distance.</item>
+        <item>A high protein and vitamin enriched food has a big roll in maintaining health.</item>
+        <item>It is necessary to drink minimum 2.7 litres of water everyday, even when you’re not thirsty.</item>
+        <item>If you have symptoms of Novel Coronavirus, Do a COVID test from your nearest hospital.</item>
+    </string-array>
 </resources>
