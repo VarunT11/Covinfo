@@ -4,94 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_primary_light"
     tools:context=".activities.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarMain"
+        style="@style/AppBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_primary_light"
-        app:elevation="0dp">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:id="@+id/appBarLayoutMain"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/appBarHomeLayout"
-                android:layout_width="0dp"
-                android:layout_height="75dp"
-                app:layout_constraintBottom_toTopOf="@+id/appBarFragmentLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/app_bar_home_background">
 
-                <TextView
-                    android:id="@+id/tvMainTitle"
-                    style="@style/MainHeadingStyle"
+                <LinearLayout
+                    android:id="@+id/layoutMainTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="32dp"
-                    android:text="Covinfo"
+                    android:layout_margin="@dimen/PrimaryDimen"
+                    android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/mcvHomeMenu"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvMainTitle"
+                        style="@style/HeadingTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name" />
+
+                    <TextView
+                        android:id="@+id/tvMainSubHeading"
+                        style="@style/SubHeadingTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_sub_heading" />
+
+                </LinearLayout>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/mcvHomeMenu"
+                    style="@style/MainMenuCardStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
-                    app:cardCornerRadius="50dp"
-                    app:contentPadding="8dp"
+                    android:layout_margin="@dimen/PrimaryDimen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tvMainTitle"
+                    app:layout_constraintStart_toEndOf="@+id/layoutMainTitle"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layoutHomeMenu"
-                        android:clickable="true"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-
 
                         <ImageView
                             android:id="@+id/imgHomeMenuIcon"
-                            android:layout_width="24dp"
-                            android:layout_height="0dp"
-                            android:layout_marginEnd="8dp"
+                            style="@style/IconImageStyle"
+                            android:contentDescription="@string/ImageContentDescription"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/tvHomeMenuRegion"
+                            app:layout_constraintEnd_toStartOf="@+id/inputHomeRegionMenu"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/ic_india" />
 
-                        <TextView
-                            android:id="@+id/tvHomeMenuRegion"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputHomeRegionMenu"
+                            style="@style/MainMenuStyle"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:text="TextView"
-                            android:textColor="@color/color_primary"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/btnHomeMenuSelectRegion"
-                            app:layout_constraintStart_toEndOf="@+id/imgHomeMenuIcon"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <ImageButton
-                            android:id="@+id/btnHomeMenuSelectRegion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:background="@android:color/transparent"
+                            android:layout_height="@dimen/PrimaryDimen"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/tvHomeMenuRegion"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_arrow_dropdown" />
+                            app:layout_constraintStart_toEndOf="@+id/imgHomeMenuIcon"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/menuRegionType"
+                                style="@style/RegionMenuTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -103,59 +106,64 @@
                 android:id="@+id/appBarFragmentLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appBarHomeLayout">
-
+                android:background="@color/color_primary_light">
 
                 <TextView
                     android:id="@+id/tvFragmentHeading"
-                    style="@style/MainHeadingStyle"
-                    android:layout_width="wrap_content"
+                    style="@style/HeadingTextStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
-                    android:text="Heading"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/RegularDimen"
+                    android:layout_marginBottom="@dimen/RegularDimen"
+                    android:layout_marginEnd="@dimen/RegularDimen"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRectangleAppBarFragment"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnBackActivity"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/btnBackActivity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
-                    android:background="@android:color/transparent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/IconImageStyle"
+                    android:layout_margin="@dimen/RegularDimen"
+                    android:contentDescription="@string/ImageContentDescription"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRectangleAppBarFragment"
                     app:layout_constraintEnd_toStartOf="@+id/tvFragmentHeading"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_back" />
+
+                <ImageView
+                    android:id="@+id/imgRectangleAppBarFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/PrimaryDimen"
+                    android:contentDescription="@string/ImageContentDescription"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/app_bar_fragment_bottom_rectangle" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fragment_card_background"
-        android:paddingStart="16dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="16dp"
+        android:fillViewport="true"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <fragment
             android:id="@+id/navHostMain"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph_main" />
+            app:navGraph="@navigation/nav_graph_main"
+            tools:ignore="FragmentTagUsage" />
 
     </androidx.core.widget.NestedScrollView>
 

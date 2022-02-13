@@ -4,18 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutIndiaInfoList"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tvStatsListTitle"
-        style="@style/FragmentHeadingStyle"
+        style="@style/SectionLabelTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:paddingStart="4dp"
-        android:paddingEnd="4dp"
-        android:text="Title"
+        android:layout_marginBottom="@dimen/SmallDimen"
         app:layout_constraintBottom_toTopOf="@+id/btnDataSort"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +19,10 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcvSearchBar"
+        style="@style/SearchNameCardStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@color/color_primary"
-        app:cardCornerRadius="4dp"
-        app:contentPadding="1dp"
+        android:layout_marginEnd="@dimen/SmallDimen"
         app:layout_constraintBottom_toBottomOf="@+id/btnDataSort"
         app:layout_constraintEnd_toStartOf="@+id/btnDataSort"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,51 +33,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <EditText
                 android:id="@+id/etSearchName"
+                style="@style/SearchNameEditTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@drawable/input_background"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="Search"
-                android:inputType="textPersonName"
-                android:paddingStart="12dp"
-                android:textColor="@color/color_text"
-                android:textColorHint="#30000000"
-                android:textCursorDrawable="@color/color_text"
-                android:textSize="14sp"
+                android:autofillHints=""
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnNameSearch"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+                tools:ignore="LabelFor" />
 
             <ImageButton
                 android:id="@+id/btnNameSearch"
+                style="@style/IconImageStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@android:color/transparent"
+                android:layout_margin="@dimen/SmallDimen"
+                android:contentDescription="@string/ImageContentDescription"
                 android:src="@drawable/ic_search"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/etSearchName"
                 app:layout_constraintTop_toTopOf="@+id/etSearchName"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
     <ImageButton
         android:id="@+id/btnDataSort"
+        style="@style/IconImageStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
+        android:contentDescription="@string/ImageContentDescription"
         android:src="@drawable/ic_sort"
         app:layout_constraintBottom_toTopOf="@+id/tvStatsListName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,13 +79,10 @@
 
     <TextView
         android:id="@+id/tvStatsListName"
-        style="@style/IndiaItemNameHeadingStyle"
+        style="@style/StatsListNameStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="3dp"
-        android:paddingStart="4dp"
-        android:text="Name Heading"
+        android:layout_marginTop="@dimen/SmallDimen"
         app:layout_constraintBottom_toTopOf="@+id/rcvStatsList"
         app:layout_constraintEnd_toStartOf="@+id/tvStatsListActive"
         app:layout_constraintHorizontal_weight="1.25"
@@ -109,11 +91,10 @@
 
     <TextView
         android:id="@+id/tvStatsListActive"
-        style="@style/IndiaItemCaseHeadingStyle"
+        style="@style/StatsListCaseHeadingStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Active"
-        android:textAlignment="center"
+        android:text="@string/ActiveLabel"
         app:layout_constraintBottom_toBottomOf="@+id/tvStatsListName"
         app:layout_constraintEnd_toStartOf="@+id/tvStatsListConfirmed"
         app:layout_constraintHorizontal_weight="1"
@@ -123,11 +104,10 @@
 
     <TextView
         android:id="@+id/tvStatsListConfirmed"
-        style="@style/IndiaItemCaseHeadingStyle"
+        style="@style/StatsListCaseHeadingStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Confirmed"
-        android:textAlignment="center"
+        android:text="@string/ConfirmedLabel"
         app:layout_constraintBottom_toBottomOf="@+id/tvStatsListActive"
         app:layout_constraintEnd_toStartOf="@+id/tvStatsListRecovered"
         app:layout_constraintHorizontal_weight="1"
@@ -137,11 +117,10 @@
 
     <TextView
         android:id="@+id/tvStatsListRecovered"
-        style="@style/IndiaItemCaseHeadingStyle"
+        style="@style/StatsListCaseHeadingStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Recovered"
-        android:textAlignment="center"
+        android:text="@string/RecoveredLabel"
         app:layout_constraintBottom_toBottomOf="@+id/tvStatsListConfirmed"
         app:layout_constraintEnd_toStartOf="@+id/tvStatsListDeceased"
         app:layout_constraintHorizontal_weight="1"
@@ -151,11 +130,10 @@
 
     <TextView
         android:id="@+id/tvStatsListDeceased"
-        style="@style/IndiaItemCaseHeadingStyle"
+        style="@style/StatsListCaseHeadingStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Deceased"
-        android:textAlignment="center"
+        android:text="@string/DeceasedLabel"
         app:layout_constraintBottom_toBottomOf="@+id/tvStatsListRecovered"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
@@ -166,8 +144,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvStatsList"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/SmallSmallDimen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

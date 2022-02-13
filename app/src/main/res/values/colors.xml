@@ -7,6 +7,7 @@
     <color name="color_primary">#9156EC</color>
     <color name="color_text">#05065C</color>
     <color name="color_text_secondary">#464651</color>
+    <color name="color_text_hint">#30000000</color>
 
     <color name="color_red">#FC1441</color>
     <color name="color_red_card">#10FC1441</color>
@@ -24,6 +25,7 @@
     <color name="color_grey_card">#106D757D</color>
     <color name="color_grey_graph_bg">#EDEEF0</color>
     
-    <color name="color_graph_line">#3005065C</color>
+    <color name="color_text_light">#3005065C</color>
+    <color name="color_text_light_light">#1005065C</color>
 
 </resources>

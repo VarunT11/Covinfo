@@ -5,30 +5,25 @@ import com.example.covinfo.enums.RegionType;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 public class CovidStats {
 
-    private final String KEY_REGION_TYPE = "region_type";
-    private final String KEY_REGION_CODE_WHO = "region_code_who";
-    private final String KEY_REGION_NAME_WHO = "region_name_who";
-    private final String KEY_COUNTRY_CODE = "country_code";
-    private final String KEY_COUNTRY_NAME = "country_name";
-    private final String KEY_STATE_CODE = "state_code";
-    private final String KEY_STATE_NAME = "state_name";
-    private final String KEY_DISTRICT_NAME = "district_name";
-    private final String KEY_DATE_OF_STAT = "date_of_stat";
-    private final String KEY_TOTAL_CONFIRMED = "total_confirmed";
-    private final String KEY_DAILY_CONFIRMED = "daily_confirmed";
-    private final String KEY_TOTAL_RECOVERED = "total_recovered";
-    private final String KEY_DAILY_RECOVERED = "daily_recovered";
-    private final String KEY_TOTAL_DECEASED = "total_deceased";
-    private final String KEY_DAILY_DECEASED = "daily_deceased";
-    private final String KEY_TOTAL_ACTIVE = "total_active";
-    private final String KEY_DAILY_ACTIVE = "daily_active";
+    private static final String KEY_REGION_TYPE = "region_type";
+    private static final String KEY_REGION_CODE_WHO = "region_code_who";
+    private static final String KEY_REGION_NAME_WHO = "region_name_who";
+    private static final String KEY_COUNTRY_CODE = "country_code";
+    private static final String KEY_COUNTRY_NAME = "country_name";
+    private static final String KEY_STATE_CODE = "state_code";
+    private static final String KEY_STATE_NAME = "state_name";
+    private static final String KEY_DISTRICT_NAME = "district_name";
+    private static final String KEY_DATE_OF_STAT = "date_of_stat";
+    private static final String KEY_TOTAL_CONFIRMED = "total_confirmed";
+    private static final String KEY_DAILY_CONFIRMED = "daily_confirmed";
+    private static final String KEY_TOTAL_RECOVERED = "total_recovered";
+    private static final String KEY_DAILY_RECOVERED = "daily_recovered";
+    private static final String KEY_TOTAL_DECEASED = "total_deceased";
+    private static final String KEY_DAILY_DECEASED = "daily_deceased";
+    private static final String KEY_TOTAL_ACTIVE = "total_active";
+    private static final String KEY_DAILY_ACTIVE = "daily_active";
 
     private RegionType regionType;
 
@@ -50,6 +45,10 @@ public class CovidStats {
     private int dailyDeceased;
     private int totalActive;
     private int dailyActive;
+
+    public CovidStats(){
+
+    }
 
     public CovidStats(JSONObject jsonObject) {
         if(jsonObject==null)

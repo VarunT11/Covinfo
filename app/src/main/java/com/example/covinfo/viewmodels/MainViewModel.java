@@ -4,13 +4,19 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.covinfo.classes.AboutApp;
 import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.Developer;
 import com.example.covinfo.classes.News;
+import com.example.covinfo.classes.RegionInfo;
 import com.example.covinfo.enums.RegionType;
 
 import java.util.ArrayList;
 
 public class MainViewModel extends ViewModel {
+
+    private final MutableLiveData<ArrayList<Developer>> developerList;
+    private final MutableLiveData<AboutApp> aboutApp;
 
     private final MutableLiveData<ArrayList<News>> newsList;
     private final MutableLiveData<News> currentNews;
@@ -25,6 +31,8 @@ public class MainViewModel extends ViewModel {
             currentStateCode,
             currentStateName,
             currentDistrictName;
+
+    private final MutableLiveData<ArrayList<RegionInfo>> regionInfoList;
 
     private final MutableLiveData<CovidStats>
             globalOverallStats,
@@ -46,6 +54,9 @@ public class MainViewModel extends ViewModel {
             currentDistrictTimeSeriesData;
 
     public MainViewModel() {
+        developerList = new MutableLiveData<>();
+        aboutApp = new MutableLiveData<>();
+
         newsList = new MutableLiveData<>();
         currentNews = new MutableLiveData<>();
 
@@ -58,6 +69,8 @@ public class MainViewModel extends ViewModel {
         currentStateCode = new MutableLiveData<>();
         currentStateName = new MutableLiveData<>();
         currentDistrictName = new MutableLiveData<>();
+
+        regionInfoList = new MutableLiveData<>();
 
         globalOverallStats = new MutableLiveData<>();
         currentWhoRegionStats = new MutableLiveData<>();
@@ -77,6 +90,22 @@ public class MainViewModel extends ViewModel {
         currentDistrictTimeSeriesData = new MutableLiveData<>();
     }
 
+    public void setDeveloperList(ArrayList<Developer> developers){
+        developerList.setValue(developers);
+    }
+
+    public LiveData<ArrayList<Developer>> getDeveloperList(){
+        return developerList;
+    }
+
+    public void setAboutApp(AboutApp about){
+        aboutApp.setValue(about);
+    }
+
+    public LiveData<AboutApp> getAboutApp(){
+        return aboutApp;
+    }
+
     public void setNewsList(ArrayList<News> newsArrayList) {
         newsList.setValue(newsArrayList);
     }
@@ -85,9 +114,9 @@ public class MainViewModel extends ViewModel {
         return newsList;
     }
 
-    public void setCurrentNews(int position){
+    public void setCurrentNews(int position) {
         ArrayList<News> list = newsList.getValue();
-        if(list!=null && list.size()>position)
+        if (list != null && list.size() > position)
             setCurrentNews(newsList.getValue().get(position));
     }
 
@@ -163,6 +192,14 @@ public class MainViewModel extends ViewModel {
         return currentDistrictName;
     }
 
+    public void setRegionInfoList(ArrayList<RegionInfo> infoList) {
+        regionInfoList.setValue(infoList);
+    }
+
+    public LiveData<ArrayList<RegionInfo>> getRegionInfoList() {
+        return regionInfoList;
+    }
+
     public void setGlobalOverallStats(CovidStats overallStats) {
         globalOverallStats.setValue(overallStats);
     }
@@ -213,10 +250,6 @@ public class MainViewModel extends ViewModel {
 
     public void setWhoRegionDataList(ArrayList<CovidStats> regionDataList) {
         whoRegionDataList.setValue(regionDataList);
-    }
-
-    public LiveData<ArrayList<CovidStats>> getWhoRegionDataList() {
-        return whoRegionDataList;
     }
 
     public void setWhoRegionCountryDataList(ArrayList<CovidStats> countryDataList) {

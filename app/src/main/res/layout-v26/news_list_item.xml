@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/NewsCardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/SmallDimen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvNewsItemTitle"
+            style="@style/NewsItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/BetweenTextMargin"
+            app:layout_constraintBottom_toTopOf="@+id/tvNewsItemDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNewsItemDescription"
+            style="@style/NewsItemDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/BetweenTextMargin"
+            android:justificationMode="inter_word"
+            app:layout_constraintBottom_toTopOf="@+id/tvNewsItemSource"
+            app:layout_constraintEnd_toEndOf="@+id/tvNewsItemTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNewsItemTitle" />
+
+        <TextView
+            android:id="@+id/tvNewsItemSource"
+            style="@style/NewsItemSourceAndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvNewsItemSeparate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNewsItemDescription" />
+
+        <TextView
+            android:id="@+id/tvNewsItemSeparate"
+            style="@style/NewsItemSourceAndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/BetweenTextMargin"
+            android:layout_marginEnd="@dimen/BetweenTextMargin"
+            android:text="@string/separate_text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNewsItemSource"
+            app:layout_constraintEnd_toStartOf="@+id/tvNewsItemTimePublished"
+            app:layout_constraintStart_toEndOf="@+id/tvNewsItemSource"
+            app:layout_constraintTop_toTopOf="@+id/tvNewsItemSource" />
+
+        <TextView
+            android:id="@+id/tvNewsItemTimePublished"
+            style="@style/NewsItemSourceAndTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNewsItemSeparate"
+            app:layout_constraintEnd_toEndOf="@+id/tvNewsItemDescription"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvNewsItemSeparate"
+            app:layout_constraintTop_toTopOf="@+id/tvNewsItemSeparate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

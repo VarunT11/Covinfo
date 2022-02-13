@@ -4,8 +4,7 @@
     android:id="@+id/mcvCaseCard"
     style="@style/InfoCardStyle"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCaseCard"
@@ -17,7 +16,7 @@
             style="@style/InfoCardHeadingStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="@dimen/SmallDimen"
             app:layout_constraintBottom_toTopOf="@+id/tvCaseCardTotal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +27,6 @@
             style="@style/InfoCardTotalCaseStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textAlignment="viewEnd"
             app:layout_constraintBottom_toTopOf="@+id/tvCaseCardDaily"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,11 +37,11 @@
             style="@style/InfoCardDailyCaseStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAlignment="viewEnd"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCaseCardTotal" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

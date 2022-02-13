@@ -15,20 +15,19 @@ public class ApiSingleton {
         void onApiFetchComplete(boolean success, String result);
     }
 
-    private Context context;
-
-    private ApiSingleton(Context context) {
-        this.context = context;
-    }
-
-    private static HashMap<Context, ApiSingleton> singletonHashMap = new HashMap<>();
+    private static final HashMap<Context, ApiSingleton> singletonHashMap = new HashMap<>();
 
     public static ApiSingleton getInstance(Context context) {
         if (!singletonHashMap.containsKey(context)) {
-            ApiSingleton apiSingleton = new ApiSingleton(context);
-            singletonHashMap.put(context, apiSingleton);
+            singletonHashMap.put(context, new ApiSingleton(context));
         }
         return singletonHashMap.get(context);
+    }
+
+    private final Context context;
+
+    private ApiSingleton(Context context) {
+        this.context = context;
     }
 
     public void sendGetRequest(String url, FetchApiInterface fetchApiInterface) {
@@ -36,7 +35,7 @@ public class ApiSingleton {
                 Request.Method.GET,
                 url,
                 response -> fetchApiInterface.onApiFetchComplete(true, response),
-                error -> fetchApiInterface.onApiFetchComplete(false, error.getLocalizedMessage())
+                error -> fetchApiInterface.onApiFetchComplete(false, error.getMessage())
         );
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(
                 10000,

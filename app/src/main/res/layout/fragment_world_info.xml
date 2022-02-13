@@ -3,25 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".fragments.WorldInfoFragment">
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/RegularDimen"
+    android:paddingEnd="@dimen/RegularDimen"
+    android:paddingBottom="@dimen/RegularDimen"
+    tools:context=".fragments.world.WorldInfoFragment">
 
-    <TextView
-        android:id="@+id/tvWorldInfoRegionTitle"
-        style="@style/FragmentHeadingStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Region-Wise Data"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvRegionList"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvTabLayoutWorldInfo"
+        style="@style/TabCardStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWorldInfoRegionTitle" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutWorldInfo"
+            style="@style/TabStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerWorldInfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/RegularDimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcvTabLayoutWorldInfo"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

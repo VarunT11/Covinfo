@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_item_name"
-        style="@style/IndiaItemNameStyle"
+        style="@style/StatsListNameStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/color_primary_light"
-        android:clickable="true"
-        android:padding="2dp"
-        android:paddingStart="8dp"
-        android:text="TextView"
+        android:clickable="false"
+        android:padding="8dp"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toTopOf="@+id/tv_item_blank"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,10 +20,9 @@
 
     <TextView
         android:id="@+id/tv_item_blank"
-        style="@style/IndiaItemCasesStyle"
+        style="@style/StatsListTotalCaseStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="1dp"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_active"
         app:layout_constraintHorizontal_weight="1.25"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +30,9 @@
 
     <TextView
         android:id="@+id/tv_item_blank_daily"
-        style="@style/IndiaItemCasesStyle"
+        style="@style/StatsListDailyCaseStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_active_daily"
         app:layout_constraintHorizontal_weight="1.25"
@@ -47,12 +41,10 @@
 
     <TextView
         android:id="@+id/tv_item_active"
-        style="@style/IndiaItemActiveCaseStyle"
+        style="@style/StatsListTotalCaseStyle"
+        android:textColor="@color/color_blue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_blank"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_confirmed"
         app:layout_constraintHorizontal_weight="1"
@@ -61,14 +53,10 @@
 
     <TextView
         android:id="@+id/tv_item_active_daily"
-        style="@style/IndiaItemActiveCaseStyle"
+        style="@style/StatsListDailyCaseStyle"
+        android:textColor="@color/color_blue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_blank_daily"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_confirmed_daily"
         app:layout_constraintHorizontal_weight="1"
@@ -77,12 +65,10 @@
 
     <TextView
         android:id="@+id/tv_item_confirmed"
-        style="@style/IndiaItemConfirmedCaseStyle"
+        style="@style/StatsListTotalCaseStyle"
+        android:textColor="@color/color_red"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_active"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_recovered"
         app:layout_constraintHorizontal_weight="1"
@@ -91,14 +77,10 @@
 
     <TextView
         android:id="@+id/tv_item_confirmed_daily"
-        style="@style/IndiaItemConfirmedCaseStyle"
+        style="@style/StatsListDailyCaseStyle"
+        android:textColor="@color/color_red"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_active_daily"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_recovered_daily"
         app:layout_constraintHorizontal_weight="1"
@@ -107,12 +89,10 @@
 
     <TextView
         android:id="@+id/tv_item_recovered"
-        style="@style/IndiaItemRecoveredCaseStyle"
+        style="@style/StatsListTotalCaseStyle"
+        android:textColor="@color/color_green"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_confirmed"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_deceased"
         app:layout_constraintHorizontal_weight="1"
@@ -121,14 +101,10 @@
 
     <TextView
         android:id="@+id/tv_item_recovered_daily"
-        style="@style/IndiaItemRecoveredCaseStyle"
+        style="@style/StatsListDailyCaseStyle"
+        android:textColor="@color/color_green"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_confirmed_daily"
         app:layout_constraintEnd_toStartOf="@+id/tv_item_deceased_daily"
         app:layout_constraintHorizontal_weight="1"
@@ -137,12 +113,10 @@
 
     <TextView
         android:id="@+id/tv_item_deceased"
-        style="@style/IndiaItemDeceasedCaseStyle"
+        style="@style/StatsListTotalCaseStyle"
+        android:textColor="@color/color_grey"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_recovered"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
@@ -151,17 +125,14 @@
 
     <TextView
         android:id="@+id/tv_item_deceased_daily"
-        style="@style/IndiaItemDeceasedCaseStyle"
+        style="@style/StatsListDailyCaseStyle"
+        android:textColor="@color/color_grey"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
-        android:padding="1dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_item_recovered_daily"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/tv_item_recovered_daily"
         app:layout_constraintTop_toTopOf="@+id/tv_item_recovered_daily" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

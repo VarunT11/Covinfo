@@ -1,8 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MeetDeveloperFragment">
+    android:paddingStart="@dimen/RegularDimen"
+    android:paddingEnd="@dimen/RegularDimen"
+    android:paddingBottom="@dimen/RegularDimen"
+    tools:context=".fragments.about.MeetDeveloperFragment">
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvAboutLabel"
+        style="@style/SectionLabelTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/AboutAppHeadingText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAboutContent"
+        style="@style/AboutContentStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/SmallDimen"
+        android:text="@string/AboutAppContentText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutLabel" />
+
+    <TextView
+        android:id="@+id/tvMeetTeamLabel"
+        style="@style/SectionLabelTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/RegularDimen"
+        android:text="@string/MeetTeamHeadingText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutContent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvDeveloperList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/SmallDimen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMeetTeamLabel" />
+
+    <Button
+        android:id="@+id/btnShareApp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/PrimaryDimen"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingStart="@dimen/PrimaryDimen"
+        android:paddingTop="@dimen/SmallDimen"
+        android:paddingEnd="@dimen/PrimaryDimen"
+        android:paddingBottom="@dimen/SmallDimen"
+        android:text="Share App"
+        android:textAllCaps="false"
+        android:textSize="@dimen/MediumFontSize"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:icon="@drawable/ic_share"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcvDeveloperList"
+        app:strokeColor="@color/color_primary"
+        app:strokeWidth="3dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.StateInfoFragment">
-
+    android:paddingStart="@dimen/RegularDimen"
+    android:paddingEnd="@dimen/RegularDimen"
+    android:paddingBottom="@dimen/RegularDimen"
+    tools:context=".fragments.india.StateInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -17,10 +19,10 @@
 
         <TextView
             android:id="@+id/tvStateInfoName"
-            style="@style/FragmentHeadingStyle"
+            style="@style/SectionLabelTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginBottom="@dimen/SmallDimen"
             app:layout_constraintBottom_toTopOf="@+id/stateInfoConfirmedCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +33,7 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginEnd="@dimen/SmallDimen"
             app:layout_constraintBottom_toTopOf="@+id/stateInfoRecoveredCard"
             app:layout_constraintEnd_toStartOf="@+id/stateInfoActiveCard"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +44,6 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/stateInfoConfirmedCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/stateInfoConfirmedCard"
@@ -53,7 +54,8 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginTop="@dimen/SmallDimen"
+            android:layout_marginEnd="@dimen/SmallDimen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/stateInfoDeceasedCard"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +66,6 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/stateInfoRecoveredCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/stateInfoRecoveredCard"
@@ -76,7 +77,8 @@
         android:id="@+id/stateInfoGraph"
         layout="@layout/graph_layout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/GraphHeight"
+        android:layout_marginTop="@dimen/RegularDimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -85,7 +87,8 @@
         android:id="@+id/stateInfoDistrictList"
         layout="@layout/stats_list_layout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/StatsListHeight"
+        android:layout_marginTop="@dimen/RegularDimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

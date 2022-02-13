@@ -4,38 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.IndiaHomeFragment">
+    android:paddingStart="@dimen/RegularDimen"
+    android:paddingTop="@dimen/SmallDimen"
+    android:paddingEnd="@dimen/RegularDimen"
+    android:paddingBottom="@dimen/RegularDimen"
+    tools:context=".fragments.india.IndiaHomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutWorldHomeInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tvWorldInfoHeading"
-            style="@style/SectionHeadingTextStyle"
+            style="@style/SectionLabelTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:text="Covid Updates"
+            android:layout_marginEnd="@dimen/SmallDimen"
+            android:text="@string/IndiaHomeCaseViewLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/btnViewWorldInfo"
             app:layout_constraintEnd_toStartOf="@+id/btnViewWorldInfo"
+            app:layout_constraintHorizontal_weight="11"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/btnViewWorldInfo" />
 
         <Button
             android:id="@+id/btnViewWorldInfo"
             style="@style/TextButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:text="Detailed View"
+            android:text="@string/DetailedView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="9"
             app:layout_constraintStart_toEndOf="@+id/tvWorldInfoHeading"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,9 +47,8 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="@dimen/SmallDimen"
+            android:layout_marginEnd="@dimen/SmallDimen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/caseCardWorldHomeDeceased"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +59,6 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/caseCardWorldHomeConfirmed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/caseCardWorldHomeConfirmed"
@@ -69,42 +70,40 @@
         android:id="@+id/layoutWorldHomeNews"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/RegularDimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeInfo">
 
-
         <TextView
             android:id="@+id/tvWorldNewsHeading"
-            style="@style/SectionHeadingTextStyle"
+            style="@style/SectionLabelTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:text="Latest Headlines"
+            android:layout_marginEnd="@dimen/SmallDimen"
+            android:text="@string/NewsHeadlinesLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/btnViewAllWorldNews"
             app:layout_constraintEnd_toStartOf="@+id/btnViewAllWorldNews"
+            app:layout_constraintHorizontal_weight="11"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/btnViewAllWorldNews" />
 
         <Button
             android:id="@+id/btnViewAllWorldNews"
             style="@style/TextButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:text="View All"
+            android:text="@string/ViewAll"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="9"
+            app:layout_constraintStart_toEndOf="@+id/tvWorldNewsHeading"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvWorldHomeNews"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@android:color/transparent"
+            android:layout_marginTop="@dimen/SmallDimen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,17 +116,17 @@
         layout="@layout/doctor_suggestion_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/RegularDimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeNews"/>
+        app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeNews" />
 
     <include
         android:id="@+id/layoutWorldHomeMeetDevelopers"
         layout="@layout/meet_developer_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/RegularDimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutWorldHomeDoctorSuggestion">

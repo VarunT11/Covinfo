@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="ExtraExtraLargeFontSize">27sp</dimen>
+    <dimen name="ExtraLargeFontSize">24sp</dimen>
+    <dimen name="LargeFontSize">21sp</dimen>
+    <dimen name="MediumFontSize">18sp</dimen>
+    <dimen name="RegularFontSize">15sp</dimen>
+    <dimen name="SmallFontSize">12sp</dimen>
+    <dimen name="SecondarySmallFontSize">11sp</dimen>
+    <dimen name="SmallSmallFontSize">9sp</dimen>
+
+    <dimen name="PrimaryDimen">24dp</dimen>
+    <dimen name="RegularDimen">16dp</dimen>
+    <dimen name="SmallDimen">8dp</dimen>
+    <dimen name="SmallSmallDimen">4dp</dimen>
+
+    <dimen name="IconSize">24dp</dimen>
+
+    <dimen name="RoundedRectangleHeight">40dp</dimen>
+
+    <dimen name="GraphHeight">300dp</dimen>
+    <dimen name="StatsListHeight">400dp</dimen>
+
+    <dimen name="ProgressFragmentLogoWidth">240dp</dimen>
+    <dimen name="ProgressFragmentLogoHeight">120dp</dimen>
+
+    <dimen name="NewsCardStrokeWidth">1dp</dimen>
+
+    <dimen name="BetweenTextMargin">4dp</dimen>
+
+</resources>

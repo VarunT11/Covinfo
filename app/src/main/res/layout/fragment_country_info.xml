@@ -3,26 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/RegularDimen"
+    android:paddingEnd="@dimen/RegularDimen"
+    android:paddingBottom="@dimen/RegularDimen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.CountryInfoFragment">
+    tools:context=".fragments.world.CountryInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCountryInfoCase"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tvCountryInfoName"
-            style="@style/SectionHeadingTextStyle"
+            style="@style/SectionLabelTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:text="Covid Updates"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,9 +31,8 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="@dimen/SmallDimen"
+            android:layout_marginEnd="@dimen/SmallDimen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/caseCardCountryInfoDeceased"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +43,6 @@
             layout="@layout/case_card_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/caseCardCountryInfoConfirmed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/caseCardCountryInfoConfirmed"
@@ -57,7 +54,8 @@
         android:id="@+id/graphCountryInfo"
         layout="@layout/graph_layout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/GraphHeight"
+        android:layout_marginTop="@dimen/RegularDimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutCountryInfoCase" />

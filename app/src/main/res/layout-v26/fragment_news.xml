@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/RegularDimen"
+    tools:context=".fragments.news.NewsFragment">
+
+    <ImageView
+        android:id="@+id/imgNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/news_image_background"
+        android:contentDescription="@string/ImageContentDescription"
+        app:layout_constraintBottom_toTopOf="@+id/tvNewsTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNewsTitle"
+        style="@style/NewsTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/RegularDimen"
+        app:layout_constraintBottom_toTopOf="@+id/tvNewsPublishedLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgNews" />
+
+    <TextView
+        android:id="@+id/tvNewsPublishedLabel"
+        style="@style/NewsLabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/SmallDimen"
+        android:layout_marginEnd="@dimen/BetweenTextMargin"
+        android:text="@string/PublishedLabel"
+        app:layout_constraintBottom_toTopOf="@+id/tvNewsAuthorLabel"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewsPublishedTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewsTitle" />
+
+    <TextView
+        android:id="@+id/tvNewsPublishedTime"
+        style="@style/NewsContentStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNewsPublishedLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvNewsPublishedLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvNewsPublishedLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvNewsAuthorLabel"
+        style="@style/NewsLabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/SmallDimen"
+        android:layout_marginEnd="@dimen/BetweenTextMargin"
+        android:text="@string/AuthorLabel"
+        app:layout_constraintBottom_toTopOf="@+id/tvContentNews"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewsAuthor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewsPublishedLabel" />
+
+    <TextView
+        android:id="@+id/tvNewsAuthor"
+        style="@style/NewsContentStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNewsAuthorLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvNewsAuthorLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvNewsAuthorLabel" />
+
+    <TextView
+        android:id="@+id/tvContentNews"
+        style="@style/NewsContentStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/RegularDimen"
+        android:justificationMode="inter_word"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewFullArticle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewsAuthorLabel" />
+
+    <Button
+        android:id="@+id/btnViewFullArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/RegularDimen"
+        style="@style/ViewArticleBtnStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContentNews" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

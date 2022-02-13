@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/RegularDimen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/developerItemLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/developerItemLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDeveloper1"
+            app:shapeAppearanceOverlay="@style/DeveloperImageShape"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/ImageContentDescription"
+            app:layout_constraintBottom_toBottomOf="@+id/socialBtnLayout1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvName1"
+            app:srcCompat="@drawable/ic_developer"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="1.5dp" />
+
+        <TextView
+            android:id="@+id/tvName1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/MediumFontSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgDeveloper1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvTagList1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/SmallDimen"
+            app:layout_constraintEnd_toEndOf="@+id/tvName1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvName1"
+            app:layout_constraintTop_toBottomOf="@+id/tvName1" />
+
+        <LinearLayout
+            android:id="@+id/socialBtnLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/SmallDimen"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rcvTagList1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/rcvTagList1"
+            app:layout_constraintTop_toBottomOf="@+id/rcvTagList1">
+
+            <ImageButton
+                android:id="@+id/btnLinkedIn1"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_linkedin" />
+
+            <ImageButton
+                android:id="@+id/btnBehance1"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_behance" />
+
+            <ImageButton
+                android:id="@+id/btnGitHub1"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_github" />
+
+            <ImageButton
+                android:id="@+id/btnMail1"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_mail" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/developerItemLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/developerItemLayout1">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDeveloper2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/ImageContentDescription"
+            app:layout_constraintBottom_toBottomOf="@+id/socialBtnLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvName2"
+            app:shapeAppearanceOverlay="@style/DeveloperImageShape"
+            app:srcCompat="@drawable/ic_developer"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="1.5dp" />
+
+        <TextView
+            android:id="@+id/tvName2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/MediumFontSize"
+            app:layout_constraintEnd_toStartOf="@+id/imgDeveloper2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvTagList2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/SmallDimen"
+            app:layout_constraintEnd_toEndOf="@+id/tvName2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/tvName2"
+            app:layout_constraintTop_toBottomOf="@+id/tvName2">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/socialBtnLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/SmallDimen"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rcvTagList2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/rcvTagList2"
+            app:layout_constraintTop_toBottomOf="@+id/rcvTagList2">
+
+            <ImageButton
+                android:id="@+id/btnLinkedIn2"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_linkedin" />
+
+            <ImageButton
+                android:id="@+id/btnBehance2"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_behance" />
+
+            <ImageButton
+                android:id="@+id/btnGitHub2"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_github" />
+
+            <ImageButton
+                android:id="@+id/btnMail2"
+                style="@style/IconImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ImageContentDescription"
+                android:padding="4dp"
+                app:srcCompat="@drawable/ic_mail" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

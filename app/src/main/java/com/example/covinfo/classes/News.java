@@ -3,8 +3,6 @@ package com.example.covinfo.classes;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.time.Instant;
-
 public class News {
 
     private String sourceName;
@@ -15,17 +13,6 @@ public class News {
     private String newsImageUrl;
     private String publishedTime;
     private String content;
-
-    public News(String sourceName, String authors, String title, String description, String newsUrl, String newsImageUrl, String publishedTime, String content) {
-        this.sourceName = sourceName;
-        this.authors = authors;
-        this.title = title;
-        this.description = description;
-        this.newsUrl = newsUrl;
-        this.newsImageUrl = newsImageUrl;
-        this.publishedTime = publishedTime;
-        this.content = content;
-    }
 
     public News(JSONObject jsonObject) {
         if (jsonObject != null) {
