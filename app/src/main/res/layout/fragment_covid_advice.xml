@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.advice.CovidAdviceFragment">
+    tools:context="com.geekhaven.covinfo.fragments.advice.CovidAdviceFragment">
 
     <ImageView
         android:id="@+id/imgAdvice"

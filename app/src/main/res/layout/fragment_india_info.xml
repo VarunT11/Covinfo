@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/RegularDimen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.india.IndiaInfoFragment">
+    tools:context="com.geekhaven.covinfo.fragments.india.IndiaInfoFragment">
 
     <include
         android:id="@+id/indiaInfoGraphIndia"

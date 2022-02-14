@@ -7,7 +7,7 @@
     android:paddingStart="@dimen/RegularDimen"
     android:paddingEnd="@dimen/RegularDimen"
     android:paddingBottom="@dimen/RegularDimen"
-    tools:context=".fragments.india.StateInfoFragment">
+    tools:context="com.geekhaven.covinfo.fragments.india.StateInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

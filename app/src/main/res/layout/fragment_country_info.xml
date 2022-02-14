@@ -7,7 +7,7 @@
     android:paddingEnd="@dimen/RegularDimen"
     android:paddingBottom="@dimen/RegularDimen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.world.CountryInfoFragment">
+    tools:context="com.geekhaven.covinfo.fragments.world.CountryInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutCountryInfoCase"

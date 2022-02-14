@@ -7,7 +7,7 @@
     android:paddingStart="@dimen/RegularDimen"
     android:paddingEnd="@dimen/RegularDimen"
     android:paddingBottom="@dimen/SmallDimen"
-    tools:context=".fragments.news.NewsListFragment">
+    tools:context="com.geekhaven.covinfo.fragments.news.NewsListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvNewsList"

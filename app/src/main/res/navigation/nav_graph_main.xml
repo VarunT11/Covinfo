@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/indiaHomeFragment"
-        android:name="com.example.covinfo.fragments.india.IndiaHomeFragment"
+        android:name="com.geekhaven.covinfo.fragments.india.IndiaHomeFragment"
         android:label="fragment_india_home"
         tools:layout="@layout/fragment_india_home" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/newsListFragment"
-        android:name="com.example.covinfo.fragments.news.NewsListFragment"
+        android:name="com.geekhaven.covinfo.fragments.news.NewsListFragment"
         android:label="fragment_news_list"
         tools:layout="@layout/fragment_news_list" >
         <action
@@ -42,12 +42,12 @@
     </fragment>
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.example.covinfo.fragments.news.NewsFragment"
+        android:name="com.geekhaven.covinfo.fragments.news.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/indiaInfoFragment"
-        android:name="com.example.covinfo.fragments.india.IndiaInfoFragment"
+        android:name="com.geekhaven.covinfo.fragments.india.IndiaInfoFragment"
         android:label="fragment_india_info"
         tools:layout="@layout/fragment_india_info" >
         <action
@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/stateInfoFragment"
-        android:name="com.example.covinfo.fragments.india.StateInfoFragment"
+        android:name="com.geekhaven.covinfo.fragments.india.StateInfoFragment"
         android:label="fragment_state_info"
         tools:layout="@layout/fragment_state_info" >
         <action
@@ -65,12 +65,12 @@
     </fragment>
     <fragment
         android:id="@+id/districtInfoFragment"
-        android:name="com.example.covinfo.fragments.india.DistrictInfoFragment"
+        android:name="com.geekhaven.covinfo.fragments.india.DistrictInfoFragment"
         android:label="fragment_district_info"
         tools:layout="@layout/fragment_district_info" />
     <fragment
         android:id="@+id/worldHomeFragment"
-        android:name="com.example.covinfo.fragments.world.WorldHomeFragment"
+        android:name="com.geekhaven.covinfo.fragments.world.WorldHomeFragment"
         android:label="fragment_world_home"
         tools:layout="@layout/fragment_world_home" >
         <action
@@ -96,7 +96,7 @@
     </fragment>
     <fragment
         android:id="@+id/worldInfoFragment"
-        android:name="com.example.covinfo.fragments.world.WorldInfoFragment"
+        android:name="com.geekhaven.covinfo.fragments.world.WorldInfoFragment"
         android:label="fragment_world_info"
         tools:layout="@layout/fragment_world_info" >
         <action
@@ -108,7 +108,7 @@
     </fragment>
     <fragment
         android:id="@+id/regionInfoFragment"
-        android:name="com.example.covinfo.fragments.world.RegionInfoFragment"
+        android:name="com.geekhaven.covinfo.fragments.world.RegionInfoFragment"
         android:label="fragment_region_info"
         tools:layout="@layout/fragment_region_info" >
         <action
@@ -117,22 +117,22 @@
     </fragment>
     <fragment
         android:id="@+id/countryInfoFragment"
-        android:name="com.example.covinfo.fragments.world.CountryInfoFragment"
+        android:name="com.geekhaven.covinfo.fragments.world.CountryInfoFragment"
         android:label="fragment_country_info"
         tools:layout="@layout/fragment_country_info" />
     <fragment
         android:id="@+id/meetDeveloperFragment"
-        android:name="com.example.covinfo.fragments.about.MeetDeveloperFragment"
+        android:name="com.geekhaven.covinfo.fragments.about.MeetDeveloperFragment"
         android:label="fragment_meet_developer"
         tools:layout="@layout/fragment_meet_developer" />
     <fragment
         android:id="@+id/adviceHomeFragment"
-        android:name="com.example.covinfo.fragments.advice.AdviceHomeFragment"
+        android:name="com.geekhaven.covinfo.fragments.advice.AdviceHomeFragment"
         android:label="fragment_advice_home"
         tools:layout="@layout/fragment_advice_home" />
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.covinfo.fragments.startup.SplashScreenFragment"
+        android:name="com.geekhaven.covinfo.fragments.startup.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action

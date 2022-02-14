@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.world.CountryListFragment">
+    tools:context="com.geekhaven.covinfo.fragments.world.CountryListFragment">
 
     <include
         android:id="@+id/countryListLayout"

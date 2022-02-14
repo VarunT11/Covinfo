@@ -5,7 +5,7 @@
     style="@style/ProgressFragmentCardStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".fragments.util.ProgressDialogFragment">
+    tools:context="com.geekhaven.covinfo.fragments.util.ProgressDialogFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

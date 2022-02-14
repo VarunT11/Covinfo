@@ -7,7 +7,7 @@
     android:paddingStart="@dimen/RegularDimen"
     android:paddingEnd="@dimen/RegularDimen"
     android:paddingBottom="@dimen/RegularDimen"
-    tools:context=".fragments.about.MeetDeveloperFragment">
+    tools:context="com.geekhaven.covinfo.fragments.about.MeetDeveloperFragment">
 
     <TextView
         android:id="@+id/tvAboutLabel"
