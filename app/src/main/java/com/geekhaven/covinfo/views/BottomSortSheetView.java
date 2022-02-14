@@ -9,7 +9,7 @@ import android.widget.RadioGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.enums.CaseType;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.radiobutton.MaterialRadioButton;

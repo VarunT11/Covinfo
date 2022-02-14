@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.enums.CaseType;
 import com.geekhaven.covinfo.enums.RegionType;
 import com.geekhaven.covinfo.views.StatsListView;

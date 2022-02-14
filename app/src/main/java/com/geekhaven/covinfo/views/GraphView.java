@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.classes.stats.CovidStats;
 import com.geekhaven.covinfo.enums.CaseType;
 import com.geekhaven.covinfo.enums.TimeSeriesType;

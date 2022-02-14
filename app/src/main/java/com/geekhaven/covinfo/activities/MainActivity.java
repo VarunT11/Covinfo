@@ -13,7 +13,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.enums.RegionType;
 import com.geekhaven.covinfo.viewmodels.MainViewModel;
 import com.google.android.material.textfield.TextInputLayout;

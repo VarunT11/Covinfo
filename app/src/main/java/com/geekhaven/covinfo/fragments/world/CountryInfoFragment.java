@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.classes.stats.CovidStats;
 import com.geekhaven.covinfo.enums.CaseType;
 import com.geekhaven.covinfo.enums.TaskType;

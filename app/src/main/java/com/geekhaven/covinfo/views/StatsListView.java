@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.adapters.stats.CountryItemAdapter;
 import com.geekhaven.covinfo.adapters.stats.ListItemAdapter;
 import com.geekhaven.covinfo.classes.stats.CovidStats;

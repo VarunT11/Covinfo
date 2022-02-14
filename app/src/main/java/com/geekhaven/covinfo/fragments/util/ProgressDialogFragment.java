@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 
 public class ProgressDialogFragment extends DialogFragment {
 

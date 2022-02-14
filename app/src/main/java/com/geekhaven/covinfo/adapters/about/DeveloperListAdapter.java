@@ -14,7 +14,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.classes.about.Developer;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.squareup.picasso.Picasso;

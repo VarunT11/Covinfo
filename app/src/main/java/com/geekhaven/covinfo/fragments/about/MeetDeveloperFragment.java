@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.adapters.about.DeveloperListAdapter;
 import com.geekhaven.covinfo.adapters.about.SourceListAdapter;
 import com.geekhaven.covinfo.enums.TaskType;

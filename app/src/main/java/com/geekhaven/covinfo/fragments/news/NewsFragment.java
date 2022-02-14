@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.manager.ActivityViewManager;
 import com.geekhaven.covinfo.utils.DateTimeUtil;
 import com.geekhaven.covinfo.viewmodels.MainViewModel;

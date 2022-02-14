@@ -17,7 +17,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.adapters.stats.NewsListAdapter;
 import com.geekhaven.covinfo.classes.stats.News;
 import com.geekhaven.covinfo.enums.CaseType;

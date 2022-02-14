@@ -5,7 +5,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.api.ApiSingleton;
 import com.geekhaven.covinfo.classes.about.AboutApp;
 import com.geekhaven.covinfo.classes.stats.CovidStats;

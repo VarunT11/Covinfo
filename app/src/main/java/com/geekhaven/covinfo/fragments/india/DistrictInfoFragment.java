@@ -14,7 +14,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 import com.geekhaven.covinfo.manager.ActivityViewManager;
 import com.geekhaven.covinfo.manager.ActivityApiManager;
 import com.geekhaven.covinfo.classes.stats.CovidStats;

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covinfo.R;
+import com.geekhaven.covinfo.R;
 
 public class CircleIndicatorAdapter extends RecyclerView.Adapter<CircleIndicatorAdapter.ViewHolder> {
 
