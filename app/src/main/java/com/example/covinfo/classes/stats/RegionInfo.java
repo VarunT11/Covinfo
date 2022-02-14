@@ -1,9 +1,12 @@
-package com.example.covinfo.classes;
+package com.example.covinfo.classes.stats;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RegionInfo {
+
+    private static final String KEY_REGION_CODE = "region_code_who";
+    private static final String KEY_REGION_NAME = "region_name_who";
 
     private String code;
     private String name;
@@ -11,8 +14,8 @@ public class RegionInfo {
     public RegionInfo(JSONObject jsonObject){
         if(jsonObject!=null){
             try {
-                code = jsonObject.getString("region_code_who");
-                name = jsonObject.getString("region_name_who");
+                code = jsonObject.getString(KEY_REGION_CODE);
+                name = jsonObject.getString(KEY_REGION_NAME);
             } catch (JSONException e){
                 e.printStackTrace();
             }

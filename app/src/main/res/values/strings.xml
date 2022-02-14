@@ -1,19 +1,14 @@
 <resources>
     <string name="app_name">CovInfo</string>
     <string name="backend_url">https://vt-covidapp.herokuapp.com/</string>
-
     <string name="main_sub_heading">Stay Updated</string>
     <string name="ImageContentDescription">Image Content Description</string>
-
     <string name="IndiaHomeCaseViewLabel">Covid Updates</string>
     <string name="DetailedView">Detailed View</string>
-
     <string name="NewsHeadlinesLabel">Latest Headlines</string>
     <string name="ViewAll">View All</string>
-
     <string name="DoctorSuggestionLayoutText">Know safety tips and precautions from top Doctors</string>
     <string name="MeetDeveloperLayoutText">Meet the Developers</string>
-
     <string name="separate_text">|</string>
     <string name="PublishedLabel">Published:</string>
     <string name="AuthorLabel">Authors:</string>
@@ -36,8 +31,9 @@
     <string name="SortSheetIncreasingItemText">Increasing</string>
     <string name="SortSheetDecreasingItemText">Decreasing</string>
     <string name="AboutAppHeadingText">About the App</string>
-    <string name="AboutAppContentText">Covinfo is a mobile application developed to let people stay up to date with the latest trends and news related to COVID-19. The App is aimed at informing the users regarding risks, best practices and relevant advisories pertaining to the COVID-19 infection.</string>
     <string name="MeetTeamHeadingText">Meet the Team</string>
+    <string name="ShareAppText">Share App</string>
+    <string name="DataSourcesLabel">Data Sources</string>
 
     <string-array name="advice_title">
         <item>Get Vaccinated</item>

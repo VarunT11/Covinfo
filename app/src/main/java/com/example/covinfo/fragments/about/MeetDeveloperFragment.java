@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.adapters.DeveloperListAdapter;
+import com.example.covinfo.adapters.about.DeveloperListAdapter;
+import com.example.covinfo.adapters.about.SourceListAdapter;
 import com.example.covinfo.enums.TaskType;
 import com.example.covinfo.manager.ActivityApiManager;
 import com.example.covinfo.manager.ActivityViewManager;
@@ -30,7 +32,8 @@ public class MeetDeveloperFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_meet_developer, container, false);
     }
 
-    private RecyclerView rcvDeveloperList;
+    private TextView tvAboutContent;
+    private RecyclerView rcvDeveloperList, rcvSourceList;
     private Button btnShareApp;
 
     private MainViewModel mainViewModel;
@@ -48,7 +51,9 @@ public class MeetDeveloperFragment extends Fragment {
     }
 
     private void findViewAndAttachListeners(View view) {
+        tvAboutContent = view.findViewById(R.id.tvAboutContent);
         rcvDeveloperList = view.findViewById(R.id.rcvDeveloperList);
+        rcvSourceList = view.findViewById(R.id.rcvDataSourceList);
         btnShareApp = view.findViewById(R.id.btnShareApp);
     }
 
@@ -63,6 +68,16 @@ public class MeetDeveloperFragment extends Fragment {
 
     private void addViewModelObservers() {
         mainViewModel
+                .getAboutApp()
+                .observe(getViewLifecycleOwner(), aboutApp -> {
+                    tvAboutContent.setText(aboutApp.getAboutAppContent());
+                    btnShareApp.setOnClickListener(v -> {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(aboutApp.getAppPlayStoreLink()));
+                        requireActivity().startActivity(intent);
+                    });
+                });
+
+        mainViewModel
                 .getDeveloperList()
                 .observe(getViewLifecycleOwner(), developers -> {
                     LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity());
@@ -75,12 +90,16 @@ public class MeetDeveloperFragment extends Fragment {
                 });
 
         mainViewModel
-                .getAboutApp()
-                .observe(getViewLifecycleOwner(), aboutApp ->
-                        btnShareApp.setOnClickListener(v -> {
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(aboutApp.getAppLink()));
-                            requireActivity().startActivity(intent);
-                        }));
+                .getDataSourceList()
+                .observe(getViewLifecycleOwner(), dataSources -> {
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity());
+                    layoutManager.setOrientation(RecyclerView.VERTICAL);
+
+                    SourceListAdapter listAdapter = new SourceListAdapter(requireActivity(), dataSources);
+
+                    rcvSourceList.setLayoutManager(layoutManager);
+                    rcvSourceList.setAdapter(listAdapter);
+                });
     }
 
     private void updateActivityViews() {
@@ -89,7 +108,8 @@ public class MeetDeveloperFragment extends Fragment {
     }
 
     private void addApiTasks() {
-        apiManager.addApiTask(TaskType.DEVELOPER_LIST, null, null);
         apiManager.addApiTask(TaskType.ABOUT_APP, null, null);
+        apiManager.addApiTask(TaskType.DEVELOPER_LIST, null, null);
+        apiManager.addApiTask(TaskType.DATA_SOURCE_LIST, null, null);
     }
 }

@@ -15,7 +15,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.covinfo.R;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.example.covinfo.enums.CaseType;
 import com.example.covinfo.enums.RegionType;
 import com.example.covinfo.enums.TaskType;

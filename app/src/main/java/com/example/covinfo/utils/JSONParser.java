@@ -1,10 +1,11 @@
 package com.example.covinfo.utils;
 
-import com.example.covinfo.classes.AboutApp;
-import com.example.covinfo.classes.CovidStats;
-import com.example.covinfo.classes.Developer;
-import com.example.covinfo.classes.News;
-import com.example.covinfo.classes.RegionInfo;
+import com.example.covinfo.classes.about.AboutApp;
+import com.example.covinfo.classes.about.DataSource;
+import com.example.covinfo.classes.stats.CovidStats;
+import com.example.covinfo.classes.about.Developer;
+import com.example.covinfo.classes.stats.News;
+import com.example.covinfo.classes.stats.RegionInfo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +17,16 @@ public class JSONParser {
 
     public JSONParser() {
 
+    }
+
+    public AboutApp parseJSONToAboutApp(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            return new AboutApp(jsonObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return new AboutApp();
+        }
     }
 
     public ArrayList<Developer> parseJSONToDeveloperList(String response) {
@@ -31,14 +42,17 @@ public class JSONParser {
         return developerList;
     }
 
-    public AboutApp parseJSONToAboutApp(String response){
+    public ArrayList<DataSource> parseJSONToDataSourceList(String response) {
+        ArrayList<DataSource> dataSources = new ArrayList<>();
         try {
-            JSONObject jsonObject = new JSONObject(response);
-            return new AboutApp(jsonObject);
-        } catch (JSONException e){
+            JSONArray jsonArray = new JSONArray(response);
+            for (int i = 0; i < jsonArray.length(); i++)
+                dataSources.add(new DataSource(jsonArray.getJSONObject(i)));
+        } catch (JSONException e) {
             e.printStackTrace();
-            return new AboutApp();
+            return new ArrayList<>();
         }
+        return dataSources;
     }
 
     public ArrayList<News> parseJSONToNewsList(String response) {

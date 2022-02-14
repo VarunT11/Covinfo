@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.covinfo.R;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.example.covinfo.enums.CaseType;
 import com.example.covinfo.enums.TimeSeriesType;
 import com.github.mikephil.charting.charts.LineChart;

@@ -1,4 +1,4 @@
-package com.example.covinfo.adapters;
+package com.example.covinfo.adapters.stats;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.classes.RegionInfo;
+import com.example.covinfo.classes.stats.RegionInfo;
 
 import java.util.ArrayList;
 import java.util.Locale;

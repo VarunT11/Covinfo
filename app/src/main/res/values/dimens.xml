@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="ExtraExtraLargeFontSize">27sp</dimen>
-    <dimen name="ExtraLargeFontSize">24sp</dimen>
-    <dimen name="LargeFontSize">21sp</dimen>
-    <dimen name="MediumFontSize">18sp</dimen>
-    <dimen name="RegularFontSize">15sp</dimen>
-    <dimen name="SmallFontSize">12sp</dimen>
-    <dimen name="SecondarySmallFontSize">11sp</dimen>
+    <dimen name="ExtraExtraLargeFontSize">24sp</dimen>
+    <dimen name="ExtraLargeFontSize">21sp</dimen>
+    <dimen name="LargeFontSize">18sp</dimen>
+    <dimen name="MediumFontSize">15sp</dimen>
+    <dimen name="RegularFontSize">12sp</dimen>
+    <dimen name="SmallFontSize">11sp</dimen>
+    <dimen name="SecondarySmallFontSize">10sp</dimen>
     <dimen name="SmallSmallFontSize">9sp</dimen>
 
     <dimen name="PrimaryDimen">24dp</dimen>
@@ -19,7 +19,7 @@
 
     <dimen name="RoundedRectangleHeight">40dp</dimen>
 
-    <dimen name="GraphHeight">300dp</dimen>
+    <dimen name="GraphHeight">320dp</dimen>
     <dimen name="StatsListHeight">400dp</dimen>
 
     <dimen name="ProgressFragmentLogoWidth">240dp</dimen>

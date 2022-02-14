@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.adapters.CountryItemAdapter;
-import com.example.covinfo.adapters.ListItemAdapter;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.adapters.stats.CountryItemAdapter;
+import com.example.covinfo.adapters.stats.ListItemAdapter;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.example.covinfo.enums.CaseType;
 import com.example.covinfo.enums.RegionType;
 

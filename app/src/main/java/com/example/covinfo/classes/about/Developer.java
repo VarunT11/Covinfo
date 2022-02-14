@@ -1,4 +1,4 @@
-package com.example.covinfo.classes;
+package com.example.covinfo.classes.about;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,6 +8,16 @@ import java.util.Arrays;
 
 public class Developer {
 
+    private static final String KEY_NAME = "name";
+    private static final String KEY_TAGS = "tags";
+    private static final String KEY_LINKEDIN = "linkedin";
+    private static final String KEY_BEHANCE = "behance";
+    private static final String KEY_GITHUB = "github";
+    private static final String KEY_MAIL = "mail";
+    private static final String KEY_IMAGE_URL = "image_url";
+
+    private static final String NULL_CONTENT = "NULL";
+
     private String name;
     private ArrayList<String> tags;
     private String linkedInId, gitHubId, behanceId, mailId;
@@ -16,30 +26,30 @@ public class Developer {
     public Developer(JSONObject jsonObject){
         if(jsonObject!=null){
             try {
-                name = jsonObject.getString("name");
+                name = jsonObject.getString(KEY_NAME);
 
-                String tagList = jsonObject.getString("tags");
+                String tagList = jsonObject.getString(KEY_TAGS);
                 String[] tagArray = tagList.split(";");
                 tags = new ArrayList<>(Arrays.asList(tagArray));
 
-                linkedInId = jsonObject.getString("linkedin");
-                if(linkedInId.equals("NULL"))
+                linkedInId = jsonObject.getString(KEY_LINKEDIN);
+                if(linkedInId.equals(NULL_CONTENT))
                     linkedInId = "";
 
-                behanceId = jsonObject.getString("behance");
-                if(behanceId.equals("NULL"))
+                behanceId = jsonObject.getString(KEY_BEHANCE);
+                if(behanceId.equals(NULL_CONTENT))
                     behanceId = "";
 
-                gitHubId = jsonObject.getString("github");
-                if(gitHubId.equals("NULL"))
+                gitHubId = jsonObject.getString(KEY_GITHUB);
+                if(gitHubId.equals(NULL_CONTENT))
                     gitHubId = "";
 
-                mailId = jsonObject.getString("mail");
-                if(mailId.equals("NULL"))
+                mailId = jsonObject.getString(KEY_MAIL);
+                if(mailId.equals(NULL_CONTENT))
                     mailId = "";
 
-                imageUrl = jsonObject.getString("image_url");
-                if(imageUrl.equals("NULL"))
+                imageUrl = jsonObject.getString(KEY_IMAGE_URL);
+                if(imageUrl.equals(NULL_CONTENT))
                     imageUrl = "";
 
             } catch (JSONException e){

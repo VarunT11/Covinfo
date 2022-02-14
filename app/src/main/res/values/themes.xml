@@ -23,6 +23,10 @@
         <item name="android:textSize">@dimen/SmallFontSize</item>
     </style>
 
+    <style name="HeadingLabelStyle" parent="HeadingTextStyle">
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
+
 
     <style name="MenuStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="boxBackgroundColor">@android:color/transparent</item>
@@ -181,7 +185,7 @@
         <item name="android:text">@string/ViewFullArticleText</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">@dimen/RegularFontSize</item>
-        <item name="cornerRadius">50sp</item>
+        <item name="cornerRadius">50dp</item>
         <item name="icon">@drawable/ic_open_link</item>
         <item name="iconGravity">end</item>
     </style>
@@ -360,6 +364,23 @@
     <style name="DeveloperImageShape">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShareAppButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:paddingStart">@dimen/PrimaryDimen</item>
+        <item name="android:paddingEnd">@dimen/PrimaryDimen</item>
+        <item name="android:paddingTop">@dimen/SmallDimen</item>
+        <item name="android:paddingBottom">@dimen/SmallDimen</item>
+        <item name="android:text">@string/ShareAppText</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/MediumFontSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="icon">@drawable/ic_share</item>
+        <item name="iconPadding">8dp</item>
+        <item name="strokeColor">@color/color_primary</item>
+        <item name="strokeWidth">3dp</item>
     </style>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.covinfo.adapters;
+package com.example.covinfo.adapters.about;
 
 import android.view.LayoutInflater;
 import android.view.View;

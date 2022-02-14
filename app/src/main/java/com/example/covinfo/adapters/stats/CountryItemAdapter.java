@@ -1,4 +1,4 @@
-package com.example.covinfo.adapters;
+package com.example.covinfo.adapters.stats;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;

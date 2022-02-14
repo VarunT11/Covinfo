@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.adapters.RegionItemAdapter;
+import com.example.covinfo.adapters.stats.RegionItemAdapter;
 import com.example.covinfo.viewmodels.MainViewModel;
 
 public class RegionListFragment extends Fragment {

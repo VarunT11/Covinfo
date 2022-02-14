@@ -16,7 +16,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.covinfo.R;
-import com.example.covinfo.adapters.CircleIndicatorAdapter;
+import com.example.covinfo.adapters.utils.CircleIndicatorAdapter;
 import com.example.covinfo.manager.ActivityViewManager;
 
 public class AdviceHomeFragment extends Fragment {

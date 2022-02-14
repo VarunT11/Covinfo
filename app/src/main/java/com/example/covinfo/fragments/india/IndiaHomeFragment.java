@@ -18,8 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.adapters.NewsListAdapter;
-import com.example.covinfo.classes.News;
+import com.example.covinfo.adapters.stats.NewsListAdapter;
+import com.example.covinfo.classes.stats.News;
 import com.example.covinfo.enums.CaseType;
 import com.example.covinfo.enums.RegionType;
 import com.example.covinfo.enums.TaskType;

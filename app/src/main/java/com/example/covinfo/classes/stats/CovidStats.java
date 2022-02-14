@@ -1,4 +1,4 @@
-package com.example.covinfo.classes;
+package com.example.covinfo.classes.stats;
 
 import com.example.covinfo.enums.RegionType;
 

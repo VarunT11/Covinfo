@@ -1,4 +1,4 @@
-package com.example.covinfo.adapters;
+package com.example.covinfo.adapters.about;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.classes.Developer;
+import com.example.covinfo.classes.about.Developer;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.squareup.picasso.Picasso;
 

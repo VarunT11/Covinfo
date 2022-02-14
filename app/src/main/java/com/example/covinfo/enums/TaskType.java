@@ -1,8 +1,9 @@
 package com.example.covinfo.enums;
 
 public enum TaskType {
-    DEVELOPER_LIST,
     ABOUT_APP,
+    DEVELOPER_LIST,
+    DATA_SOURCE_LIST,
     WORLD_NEWS,
     GLOBAL_DATA,
     REGION_INFO_LIST,

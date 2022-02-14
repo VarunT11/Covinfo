@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covinfo.R;
-import com.example.covinfo.adapters.NewsListAdapter;
+import com.example.covinfo.adapters.stats.NewsListAdapter;
 import com.example.covinfo.manager.ActivityViewManager;
 import com.example.covinfo.viewmodels.MainViewModel;
 

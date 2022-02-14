@@ -4,19 +4,21 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.covinfo.classes.AboutApp;
-import com.example.covinfo.classes.CovidStats;
-import com.example.covinfo.classes.Developer;
-import com.example.covinfo.classes.News;
-import com.example.covinfo.classes.RegionInfo;
+import com.example.covinfo.classes.about.AboutApp;
+import com.example.covinfo.classes.about.DataSource;
+import com.example.covinfo.classes.stats.CovidStats;
+import com.example.covinfo.classes.about.Developer;
+import com.example.covinfo.classes.stats.News;
+import com.example.covinfo.classes.stats.RegionInfo;
 import com.example.covinfo.enums.RegionType;
 
 import java.util.ArrayList;
 
 public class MainViewModel extends ViewModel {
 
-    private final MutableLiveData<ArrayList<Developer>> developerList;
     private final MutableLiveData<AboutApp> aboutApp;
+    private final MutableLiveData<ArrayList<Developer>> developerList;
+    private final MutableLiveData<ArrayList<DataSource>> dataSourceList;
 
     private final MutableLiveData<ArrayList<News>> newsList;
     private final MutableLiveData<News> currentNews;
@@ -54,8 +56,9 @@ public class MainViewModel extends ViewModel {
             currentDistrictTimeSeriesData;
 
     public MainViewModel() {
-        developerList = new MutableLiveData<>();
         aboutApp = new MutableLiveData<>();
+        developerList = new MutableLiveData<>();
+        dataSourceList = new MutableLiveData<>();
 
         newsList = new MutableLiveData<>();
         currentNews = new MutableLiveData<>();
@@ -90,6 +93,14 @@ public class MainViewModel extends ViewModel {
         currentDistrictTimeSeriesData = new MutableLiveData<>();
     }
 
+    public void setAboutApp(AboutApp about){
+        aboutApp.setValue(about);
+    }
+
+    public LiveData<AboutApp> getAboutApp(){
+        return aboutApp;
+    }
+
     public void setDeveloperList(ArrayList<Developer> developers){
         developerList.setValue(developers);
     }
@@ -98,12 +109,12 @@ public class MainViewModel extends ViewModel {
         return developerList;
     }
 
-    public void setAboutApp(AboutApp about){
-        aboutApp.setValue(about);
+    public void setDataSourceList(ArrayList<DataSource> sourceList){
+        dataSourceList.setValue(sourceList);
     }
 
-    public LiveData<AboutApp> getAboutApp(){
-        return aboutApp;
+    public LiveData<ArrayList<DataSource>> getDataSourceList(){
+        return dataSourceList;
     }
 
     public void setNewsList(ArrayList<News> newsArrayList) {

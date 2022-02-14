@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.covinfo.R;
 import com.example.covinfo.manager.ActivityViewManager;
 import com.example.covinfo.manager.ActivityApiManager;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.example.covinfo.enums.CaseType;
 import com.example.covinfo.enums.TaskType;
 import com.example.covinfo.views.CaseCardView;

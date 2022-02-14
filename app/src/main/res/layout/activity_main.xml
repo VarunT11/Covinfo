@@ -110,12 +110,12 @@
 
                 <TextView
                     android:id="@+id/tvFragmentHeading"
-                    style="@style/HeadingTextStyle"
+                    style="@style/HeadingLabelStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/RegularDimen"
-                    android:layout_marginBottom="@dimen/RegularDimen"
                     android:layout_marginEnd="@dimen/RegularDimen"
+                    android:layout_marginBottom="@dimen/RegularDimen"
                     android:textAlignment="center"
                     app:layout_constraintBottom_toTopOf="@+id/imgRectangleAppBarFragment"
                     app:layout_constraintEnd_toEndOf="parent"

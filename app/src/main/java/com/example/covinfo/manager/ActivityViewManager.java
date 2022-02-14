@@ -8,13 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.example.covinfo.R;
 import com.example.covinfo.enums.RegionType;
-import com.example.covinfo.viewmodels.MainViewModel;
 
 import java.util.HashMap;
 
@@ -29,14 +25,11 @@ public class ActivityViewManager {
         return managerHashMap.get(activity);
     }
 
-    private AppCompatActivity activity;
+    private final AppCompatActivity activity;
 
     private View appBarHomeView, appBarFragmentView;
     private TextView tvFragmentHeading;
     private ImageView iconRegionMenu;
-
-    private MainViewModel mainViewModel;
-    private NavController navController;
 
     public ActivityViewManager(AppCompatActivity activity){
         this.activity = activity;
@@ -51,9 +44,6 @@ public class ActivityViewManager {
 
         ImageButton btnBack = activity.findViewById(R.id.btnBackActivity);
         btnBack.setOnClickListener(v -> activity.onBackPressed());
-
-        mainViewModel = new ViewModelProvider(activity).get(MainViewModel.class);
-        navController = Navigation.findNavController(activity, R.id.navHostMain);
     }
 
     public void updateAppBarVisibility(int homeVisible, int fragmentVisible){

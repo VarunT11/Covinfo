@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.covinfo.R;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.example.covinfo.enums.CaseType;
 import com.example.covinfo.enums.TaskType;
 import com.example.covinfo.manager.ActivityApiManager;

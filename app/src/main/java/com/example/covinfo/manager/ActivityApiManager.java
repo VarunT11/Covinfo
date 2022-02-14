@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.covinfo.R;
 import com.example.covinfo.api.ApiSingleton;
-import com.example.covinfo.classes.AboutApp;
-import com.example.covinfo.classes.CovidStats;
+import com.example.covinfo.classes.about.AboutApp;
+import com.example.covinfo.classes.stats.CovidStats;
 import com.example.covinfo.enums.TaskType;
 import com.example.covinfo.fragments.util.ProgressDialogFragment;
 import com.example.covinfo.utils.JSONParser;
@@ -84,10 +84,13 @@ public class ActivityApiManager {
     }
 
     private void onTaskSuccess(TaskType taskType, String response) {
-        if(taskType == TaskType.DEVELOPER_LIST){
-            mainViewModel.setDeveloperList(jsonParser.parseJSONToDeveloperList(response));
-        } else if (taskType == TaskType.ABOUT_APP){
+        if(taskType == TaskType.ABOUT_APP){
             mainViewModel.setAboutApp(jsonParser.parseJSONToAboutApp(response));
+        }
+        else if(taskType == TaskType.DEVELOPER_LIST){
+            mainViewModel.setDeveloperList(jsonParser.parseJSONToDeveloperList(response));
+        } else if (taskType == TaskType.DATA_SOURCE_LIST){
+            mainViewModel.setDataSourceList(jsonParser.parseJSONToDataSourceList(response));
         }
         else if (taskType == TaskType.WORLD_NEWS || taskType == TaskType.INDIA_NEWS) {
             mainViewModel.setNewsList(jsonParser.parseJSONToNewsList(response));
@@ -102,10 +105,13 @@ public class ActivityApiManager {
         if(error!=null)
             Log.d(taskType.name(), error);
 
-        if(taskType == TaskType.DEVELOPER_LIST){
-            mainViewModel.setDeveloperList(new ArrayList<>());
-        } else if (taskType == TaskType.ABOUT_APP){
+        if (taskType == TaskType.ABOUT_APP){
             mainViewModel.setAboutApp(new AboutApp());
+        }
+        else if(taskType == TaskType.DEVELOPER_LIST){
+            mainViewModel.setDeveloperList(new ArrayList<>());
+        } else if (taskType == TaskType.DATA_SOURCE_LIST){
+            mainViewModel.setDataSourceList(new ArrayList<>());
         }
         else if (taskType == TaskType.WORLD_NEWS || taskType == TaskType.INDIA_NEWS) {
             mainViewModel.setNewsList(new ArrayList<>());
@@ -119,10 +125,12 @@ public class ActivityApiManager {
     private String getApiUrl(TaskType taskType, String code, String name) {
         String root_url = activity.getString(R.string.backend_url);
         switch (taskType) {
-            case DEVELOPER_LIST:
-                return root_url + "about/developers/";
             case ABOUT_APP:
                 return root_url + "about/app/";
+            case DEVELOPER_LIST:
+                return root_url + "about/developers/";
+            case DATA_SOURCE_LIST:
+                return root_url + "about/source/";
             case WORLD_NEWS:
                 return root_url + "world/news/";
             case GLOBAL_DATA:

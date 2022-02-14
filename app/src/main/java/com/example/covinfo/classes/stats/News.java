@@ -1,9 +1,18 @@
-package com.example.covinfo.classes;
+package com.example.covinfo.classes.stats;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class News {
+
+    private static final String KEY_SOURCE_NAME = "source_name";
+    private static final String KEY_AUTHORS = "authors";
+    private static final String KEY_TITLE = "title";
+    private static final String KEY_DESCRIPTION = "description";
+    private static final String KEY_NEWS_URL = "news_url";
+    private static final String KEY_NEWS_IMAGE_URL = "news_image_url";
+    private static final String KEY_CONTENT = "content";
+    private static final String KEy_PUBLISHED_TIME = "published_time";
 
     private String sourceName;
     private String authors;
@@ -17,14 +26,14 @@ public class News {
     public News(JSONObject jsonObject) {
         if (jsonObject != null) {
             try {
-                sourceName = jsonObject.getString("source_name");
-                authors = jsonObject.getString("authors");
-                title = jsonObject.getString("title");
-                description = jsonObject.getString("description");
-                newsUrl = jsonObject.getString("news_url");
-                newsImageUrl = jsonObject.getString("news_image_url");
-                content = jsonObject.getString("content");
-                publishedTime = jsonObject.getString("published_time");
+                sourceName = jsonObject.getString(KEY_SOURCE_NAME);
+                authors = jsonObject.getString(KEY_AUTHORS);
+                title = jsonObject.getString(KEY_TITLE);
+                description = jsonObject.getString(KEY_DESCRIPTION);
+                newsUrl = jsonObject.getString(KEY_NEWS_URL);
+                newsImageUrl = jsonObject.getString(KEY_NEWS_IMAGE_URL);
+                content = jsonObject.getString(KEY_CONTENT);
+                publishedTime = jsonObject.getString(KEy_PUBLISHED_TIME);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
