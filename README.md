@@ -64,9 +64,6 @@ Covinfo/
 [GitHub](https://github.com/VarunT11) | [LinkedIn](https://linkedin.com/in/iamvt11)
 
 ---
-
-## ✉️ License
-
 This project was built for educational and awareness purposes during the COVID-19 pandemic.
 
 > Note: This app relies on third-party APIs that may change or be deprecated.
